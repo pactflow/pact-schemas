@@ -1,0 +1,21 @@
+{
+  "consumer": {
+    "name": "A consumer"
+  },
+  "interactions": [
+    {
+      "type": "Synchronous/HTTP",
+      "description": "A description",
+      "request": {
+        "method": "DELETE",
+        "path": "/a/path"
+      },
+      "response": {
+        "status": 200
+      }
+    }
+  ],
+  "provider": {
+    "name": "A provider"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "consumer": {
+    "name": "A consumer"
+  },
+  "interactions": [
+    {
+      "description": "A description",
+      "request": {
+        "method": "post",
+        "path": "/path",
+        "body": {},
+        "generators": {
+          "body": {
+            "$.date": { "type": "Date", "format": "yyyy-MM-dd" },
+            "$.datetime": {
+              "type": "DateTime",
+              "format": "yyyy-MM-dd HH:ss:mm"
+            },
+            "$.boolean": { "type": "RandomBoolean" },
+            "$.decimal": { "type": "RandomDecimal", "digits": 5 },
+            "$.hexadecimal": { "type": "RandomHexadecimal", "digits": 5 },
+            "$.int": { "type": "RandomInt", "min": 1, "max": 10 },
+            "$.string": { "type": "RandomString", "size": 200 },
+            "$.regex": { "type": "Regex", "regex": "//w+" },
+            "$.time": { "type": "Time", "format": "HH:ss:mm" },
+            "$.uuid": { "type": "Uuid" }
+          }
+        }
+      },
+      "response": {
+        "status": 200
+      }
+    }
+  ],
+  "provider": {
+    "name": "A provider"
+  }
+}

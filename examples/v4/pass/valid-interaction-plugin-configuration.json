@@ -1,0 +1,26 @@
+{
+  "consumer": {
+    "name": "A consumer"
+  },
+  "interactions": [
+    {
+      "type": "Synchronous/HTTP",
+      "pluginConfiguration": {
+        "foo": {
+          "bar": "bar"
+        }
+      },
+      "description": "A description",
+      "request": {
+        "method": "get",
+        "path": "/a/path"
+      },
+      "response": {
+        "status": 200
+      }
+    }
+  ],
+  "provider": {
+    "name": "A provider"
+  }
+}

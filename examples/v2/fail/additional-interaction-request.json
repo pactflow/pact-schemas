@@ -1,0 +1,21 @@
+{
+  "consumer": {
+    "name": "A consumer"
+  },
+  "interactions": [
+    {
+      "description": "A description",
+      "request": {
+        "additional": "property",
+        "method": "get",
+        "path": "/a/path"
+      },
+      "response": {
+        "status": 200
+      }
+    }
+  ],
+  "provider": {
+    "name": "A provider"
+  }
+}

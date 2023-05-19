@@ -1,0 +1,17 @@
+{
+  "consumer": {
+    "name": "A consumer"
+  },
+  "interactions": [
+    {
+      "description": "A description",
+      "request": {
+        "method": "get",
+        "path": "/a/path"
+      }
+    }
+  ],
+  "provider": {
+    "name": "A provider"
+  }
+}

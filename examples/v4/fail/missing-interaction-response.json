@@ -1,0 +1,18 @@
+{
+  "consumer": {
+    "name": "A consumer"
+  },
+  "interactions": [
+    {
+      "type": "Synchronous/HTTP",
+      "description": "A description",
+      "request": {
+        "method": "get",
+        "path": "/a/path"
+      }
+    }
+  ],
+  "provider": {
+    "name": "A provider"
+  }
+}

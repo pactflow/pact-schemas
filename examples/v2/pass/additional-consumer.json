@@ -1,0 +1,10 @@
+{
+  "consumer": {
+    "additional": "property",
+    "name": "A consumer"
+  },
+  "interactions": [],
+  "provider": {
+    "name": "A provider"
+  }
+}

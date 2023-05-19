@@ -1,0 +1,30 @@
+{
+  "consumer": {
+    "name": "A consumer"
+  },
+  "interactions": [
+    {
+      "description": "A description",
+      "request": {
+        "body": {
+          "name": "exampleName"
+        },
+        "matchingRules": {
+          "$.body.name": {
+            "additional": "property",
+            "match": "regex",
+            "regex": "^[a-zA-Z]+$"
+          }
+        },
+        "method": "post",
+        "path": "/a/path"
+      },
+      "response": {
+        "status": 200
+      }
+    }
+  ],
+  "provider": {
+    "name": "A provider"
+  }
+}

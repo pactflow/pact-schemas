@@ -1,0 +1,28 @@
+{
+  "consumer": {
+    "name": "A consumer"
+  },
+  "interactions": [
+    {
+      "type": "Synchronous/HTTP",
+      "description": "A description",
+      "request": {
+        "body": {
+          "content": "Cg9wYWN0LWp2bS1kcml2ZXISBTAuMC4w",
+          "contentType": "application/protobuf; message=InitPluginRequest",
+          "contentTypeHint": "BINARY",
+          "encoded": "base64"
+        },
+        "matchingRules": {},
+        "method": "post",
+        "path": "/a/path"
+      },
+      "response": {
+        "status": 200
+      }
+    }
+  ],
+  "provider": {
+    "name": "A provider"
+  }
+}

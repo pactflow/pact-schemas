@@ -1,0 +1,25 @@
+{
+  "consumer": {
+    "name": "A consumer"
+  },
+  "interactions": [
+    {
+      "type": "Synchronous/HTTP",
+      "description": "A description",
+      "request": {
+        "method": "get",
+        "path": "/a/path",
+        "query": {
+          "parameter1": ["value1"],
+          "parameter2": ["value2"]
+        }
+      },
+      "response": {
+        "status": 200
+      }
+    }
+  ],
+  "provider": {
+    "name": "A provider"
+  }
+}

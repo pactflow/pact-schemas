@@ -1,0 +1,14 @@
+{
+  "consumer": {
+    "name": "A consumer"
+  },
+  "interactions": [],
+  "metadata": {
+    "pact-specification": {
+      "version": "3.0.0"
+    }
+  },
+  "provider": {
+    "name": "A provider"
+  }
+}

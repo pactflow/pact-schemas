@@ -1,0 +1,19 @@
+{
+  "consumer": {
+    "name": "A consumer"
+  },
+  "messages": [
+    {
+      "description": "A description",
+      "providerState": "A provider state",
+      "contents": {},
+      "metadata": {},
+      "matchingRules": {
+        "body": {}
+      }
+    }
+  ],
+  "provider": {
+    "name": "A provider"
+  }
+}

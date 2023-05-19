@@ -1,0 +1,29 @@
+{
+  "consumer": {
+    "name": "A consumer"
+  },
+  "interactions": [
+    {
+      "description": "A description",
+      "request": {
+        "method": "post",
+        "path": "/a/path"
+      },
+      "response": {
+        "body": {
+          "ids": [1]
+        },
+        "matchingRules": {
+          "$.body.id": {
+            "match": "type",
+            "min": 1
+          }
+        },
+        "status": 200
+      }
+    }
+  ],
+  "provider": {
+    "name": "A provider"
+  }
+}

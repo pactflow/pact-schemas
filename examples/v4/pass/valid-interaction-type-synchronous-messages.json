@@ -1,0 +1,98 @@
+{
+  "consumer": {
+    "name": "A consumer"
+  },
+  "interactions": [
+    {
+      "type": "Synchronous/Messages",
+      "description": "init plugin request",
+      "key": "c05e8d0d3e683897",
+      "request": {
+        "contents": {
+          "content": "ChJwbHVnaW4tZHJpdmVyLXJ1c3QSBTAuMC4w",
+          "contentType": "application/protobuf;message=InitPluginRequest",
+          "contentTypeHint": "BINARY",
+          "encoded": "base64"
+        },
+        "generators": {
+          "body": {
+            "$.a": {
+              "type": "Uuid"
+            }
+          }
+        },
+        "matchingRules": {
+          "body": {
+            "$.request.implementation": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            },
+            "$.request.version": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            }
+          }
+        },
+        "metadata": {}
+      },
+      "response": [
+        {
+          "contents": {
+            "content": "CggIABIEdGVzdA==",
+            "contentType": "application/protobuf;message=InitPluginResponse",
+            "contentTypeHint": "BINARY",
+            "encoded": "base64"
+          },
+          "matchingRules": {
+            "body": {
+              "$.response.catalogue": {
+                "combine": "AND",
+                "matchers": [
+                  {
+                    "match": "type"
+                  }
+                ]
+              },
+              "$.response.catalogue.*": {
+                "combine": "AND",
+                "matchers": [
+                  {
+                    "match": "type"
+                  }
+                ]
+              },
+              "$.response.catalogue.key": {
+                "combine": "AND",
+                "matchers": [
+                  {
+                    "match": "type"
+                  }
+                ]
+              },
+              "$.response.catalogue.type": {
+                "combine": "AND",
+                "matchers": [
+                  {
+                    "match": "regex",
+                    "regex": "CONTENT_MATCHER|CONTENT_GENERATOR"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "provider": {
+    "name": "A provider"
+  }
+}

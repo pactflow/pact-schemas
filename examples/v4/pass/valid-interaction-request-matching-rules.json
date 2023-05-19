@@ -1,0 +1,64 @@
+{
+  "consumer": {
+    "name": "A consumer"
+  },
+  "interactions": [
+    {
+      "type": "Synchronous/HTTP",
+      "description": "A description",
+      "request": {
+        "method": "post",
+        "path": "/path",
+        "body": {
+          "content": "Cg9wYWN0LWp2bS1kcml2ZXISBTAuMC4w",
+          "contentType": "application/protobuf; message=InitPluginRequest",
+          "contentTypeHint": "BINARY",
+          "encoded": "base64"
+        },
+        "matchingRules": {
+          "path": {
+            "matchers": [{ "match": "regex", "regex": "\\w+" }]
+          },
+          "query": {
+            "Q1": {
+              "matchers": [{ "match": "regex", "regex": "\\w+" }]
+            }
+          },
+          "header": {
+            "Accept": {
+              "matchers": [
+                { "match": "contentType", "value": "application/json" }
+              ]
+            }
+          },
+          "body": {
+            "$.data": {
+              "combine": "OR",
+              "matchers": [
+                { "match": "boolean" },
+                { "match": "date", "format": "yyyy-MM-dd" },
+                { "match": "datetime", "format": "yyyy-MM-dd HH:ss:mm" },
+                { "match": "decimal" },
+                { "match": "equality" },
+                { "match": "include", "value": "substr" },
+                { "match": "integer" },
+                { "match": "null" },
+                { "match": "number" },
+                { "match": "regex", "regex": "\\w+" },
+                { "match": "time", "format": "HH:ss:mm" },
+                { "match": "type", "min": 1, "max": 10 },
+                { "match": "values" }
+              ]
+            }
+          }
+        }
+      },
+      "response": {
+        "status": 200
+      }
+    }
+  ],
+  "provider": {
+    "name": "A provider"
+  }
+}

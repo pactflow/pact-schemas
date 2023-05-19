@@ -1,0 +1,16 @@
+{
+  "consumer": {
+    "name": "A consumer"
+  },
+  "messages": [
+    {
+      "description": "A description",
+      "providerState": "A provider state",
+      "contents": {},
+      "metadata": {}
+    }
+  ],
+  "provider": {
+    "name": "A provider"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "consumer": {
+    "name": "A consumer"
+  },
+  "interactions": [
+    {
+      "type": "Asynchronous/Messages",
+      "description": "Test Message",
+      "key": "m_001",
+      "metadata": {
+        "contentType": "application/json",
+        "destination": "a/b/c"
+      },
+      "providerStates": [
+        {
+          "name": "message exists"
+        }
+      ],
+      "contents": {
+        "contentType": "application/json",
+        "encoded": false,
+        "content": {
+          "a": "1234-1234"
+        }
+      },
+      "matchingRules": {
+        "body": {
+          "$.a": {
+            "matchers": [
+              {
+                "match": "regex",
+                "regex": "\\d+-\\d+"
+              }
+            ],
+            "combine": "AND"
+          }
+        }
+      },
+      "generators": {
+        "body": {
+          "$.a": {
+            "type": "Uuid"
+          }
+        }
+      }
+    }
+  ],
+  "provider": {
+    "name": "A provider"
+  }
+}
