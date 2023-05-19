@@ -1,0 +1,249 @@
+{
+  "title": "Pact V2",
+  "description": "Schema for a Pact file",
+  "definitions": {
+    "headers": {
+      "$id": "#/definitions/headers",
+      "anyOf": [
+        {
+          "type": "object",
+          "patternProperties": {
+            "^(.*)$": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "patternProperties": {
+            "^(.*)$": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "interaction": {
+      "$id": "#/definitions/interaction",
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "providerState": {
+          "type": "string"
+        },
+        "request": {
+          "$ref": "#/definitions/request"
+        },
+        "response": {
+          "$ref": "#/definitions/response"
+        }
+      },
+      "required": [
+        "description",
+        "request",
+        "response"
+      ]
+    },
+    "interactions": {
+      "$id": "#/definitions/interactions",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/interaction"
+      }
+    },
+    "matchRegex": {
+      "$id": "#/definitions/matchRegex",
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "match": {
+          "const": "regex",
+          "type": "string"
+        },
+        "regex": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "match",
+        "regex"
+      ]
+    },
+    "matchType": {
+      "$id": "#/definitions/matchType",
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "match": {
+          "const": "type",
+          "type": "string"
+        },
+        "max": {
+          "type": "number"
+        },
+        "min": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "match"
+      ]
+    },
+    "matchingRules": {
+      "$id": "#/definitions/matchingRules",
+      "additionalProperties": false,
+      "type": "object",
+      "patternProperties": {
+        "^\\$.*$": {
+          "oneOf": [
+            {
+              "$ref": "#/definitions/matchRegex"
+            },
+            {
+              "$ref": "#/definitions/matchType"
+            }
+          ]
+        }
+      }
+    },
+    "metadata": {
+      "$id": "#/definitions/metadata",
+      "type": "object",
+      "properties": {
+        "pactSpecification": {
+          "additionalProperties": false,
+          "type": "object",
+          "properties": {
+            "version": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "version"
+          ]
+        },
+        "pactSpecificationVersion": {
+          "type": "string"
+        },
+        "pact-specification": {
+          "additionalProperties": false,
+          "type": "object",
+          "properties": {
+            "version": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "version"
+          ]
+        }
+      }
+    },
+    "pacticipant": {
+      "$id": "#/definitions/pacticipant",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "request": {
+      "$id": "#/definitions/request",
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "body": {},
+        "headers": {
+          "$ref": "#/definitions/headers"
+        },
+        "method": {
+          "type": "string",
+          "enum": [
+            "connect",
+            "CONNECT",
+            "delete",
+            "DELETE",
+            "get",
+            "GET",
+            "head",
+            "HEAD",
+            "options",
+            "OPTIONS",
+            "post",
+            "POST",
+            "put",
+            "PUT",
+            "trace",
+            "TRACE"
+          ]
+        },
+        "path": {
+          "type": "string"
+        },
+        "query": {
+          "type": "string",
+          "pattern": "^$|^[^=&]+=[^=&]+&?$|^[^=&]+=[^=&]+(&[^=&]+=[^=&]+)*&?$"
+        },
+        "matchingRules": {
+          "$ref": "#/definitions/matchingRules"
+        }
+      },
+      "required": [
+        "method",
+        "path"
+      ]
+    },
+    "response": {
+      "$id": "#/definitions/response",
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "body": {},
+        "headers": {
+          "$ref": "#/definitions/headers"
+        },
+        "status": {
+          "minimum": 100,
+          "maximum": 599,
+          "type": "integer"
+        },
+        "matchingRules": {
+          "$ref": "#/definitions/matchingRules"
+        }
+      },
+      "required": [
+        "status"
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "consumer": {
+      "$ref": "#/definitions/pacticipant"
+    },
+    "interactions": {
+      "$ref": "#/definitions/interactions"
+    },
+    "metadata": {
+      "$ref": "#/definitions/metadata"
+    },
+    "provider": {
+      "$ref": "#/definitions/pacticipant"
+    }
+  },
+  "required": [
+    "consumer",
+    "interactions",
+    "provider"
+  ]
+}
