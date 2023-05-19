@@ -1,5 +1,7 @@
 # Pact Schemas
 
+[![Pact Schemas](https://github.com/pactflow/pact-schemas/actions/workflows/build.yml/badge.svg)](https://github.com/pactflow/pact-schemas/actions/workflows/build.yml)
+
 This repository reimplements [Pact JSON
 Schema](https://bitbucket.org/atlassian/pact-json-schema) using
 [TypeBox](https://github.com/sinclairzx81/typebox) enabling a more composeable
@@ -13,7 +15,9 @@ supported.
 ## To install & run
 
 ```
-npm install
+npm ci
+npm run lint
 npm run prettier
-npm test
+npm run typecheck
+npm run test
 ```

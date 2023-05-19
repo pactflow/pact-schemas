@@ -27,5 +27,5 @@ jobs:
           npm ci
           npm run lint
           npm run prettier
-          npm run types
+          npm run typecheck
           npm run test
