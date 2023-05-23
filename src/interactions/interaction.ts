@@ -41,13 +41,10 @@ export const interactionV3 = Type.Composite(
 // TODO: DRY these
 const commonInteractionV4 = Type.Object({
   comments: Type.Optional(
-    Type.Object(
-      {
-        testname: Type.String(),
-        text: Type.Array(Type.String()),
-      },
-      { additionalProperties: false }
-    )
+    Type.Object({
+      testname: Type.Optional(Type.String()),
+      text: Type.Optional(Type.Array(Type.String())),
+    })
   ),
   interactionMarkup: Type.Optional(
     Type.Object(

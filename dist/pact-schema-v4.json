@@ -392,7 +392,6 @@
           "type": "object",
           "properties": {
             "comments": {
-              "additionalProperties": false,
               "type": "object",
               "properties": {
                 "testname": {
@@ -404,11 +403,7 @@
                     "type": "string"
                   }
                 }
-              },
-              "required": [
-                "testname",
-                "text"
-              ]
+              }
             },
             "interactionMarkup": {
               "additionalProperties": false,
@@ -505,7 +500,6 @@
           "type": "object",
           "properties": {
             "comments": {
-              "additionalProperties": false,
               "type": "object",
               "properties": {
                 "testname": {
@@ -517,11 +511,7 @@
                     "type": "string"
                   }
                 }
-              },
-              "required": [
-                "testname",
-                "text"
-              ]
+              }
             },
             "interactionMarkup": {
               "additionalProperties": false,
@@ -648,7 +638,6 @@
           "type": "object",
           "properties": {
             "comments": {
-              "additionalProperties": false,
               "type": "object",
               "properties": {
                 "testname": {
@@ -660,11 +649,7 @@
                     "type": "string"
                   }
                 }
-              },
-              "required": [
-                "testname",
-                "text"
-              ]
+              }
             },
             "interactionMarkup": {
               "additionalProperties": false,
