@@ -1733,7 +1733,6 @@ exports[`Pact > v4 > can be serialised 1`] = `
           "additionalProperties": false,
           "properties": {
             "comments": {
-              "additionalProperties": false,
               "properties": {
                 "testname": {
                   "type": "string",
@@ -1745,10 +1744,6 @@ exports[`Pact > v4 > can be serialised 1`] = `
                   "type": "array",
                 },
               },
-              "required": [
-                "testname",
-                "text",
-              ],
               "type": "object",
             },
             "description": {
@@ -1846,7 +1841,6 @@ exports[`Pact > v4 > can be serialised 1`] = `
           "additionalProperties": false,
           "properties": {
             "comments": {
-              "additionalProperties": false,
               "properties": {
                 "testname": {
                   "type": "string",
@@ -1858,10 +1852,6 @@ exports[`Pact > v4 > can be serialised 1`] = `
                   "type": "array",
                 },
               },
-              "required": [
-                "testname",
-                "text",
-              ],
               "type": "object",
             },
             "contents": {},
@@ -1989,7 +1979,6 @@ exports[`Pact > v4 > can be serialised 1`] = `
           "additionalProperties": false,
           "properties": {
             "comments": {
-              "additionalProperties": false,
               "properties": {
                 "testname": {
                   "type": "string",
@@ -2001,10 +1990,6 @@ exports[`Pact > v4 > can be serialised 1`] = `
                   "type": "array",
                 },
               },
-              "required": [
-                "testname",
-                "text",
-              ],
               "type": "object",
             },
             "description": {

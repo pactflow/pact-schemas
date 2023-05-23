@@ -43,10 +43,9 @@ const commonInteractionV4 = Type.Object({
   comments: Type.Optional(
     Type.Object(
       {
-        testname: Type.String(),
-        text: Type.Array(Type.String()),
+        testname: Type.Optional(Type.String()),
+        text: Type.Optional(Type.Array(Type.String())),
       },
-      { additionalProperties: false }
     )
   ),
   interactionMarkup: Type.Optional(
