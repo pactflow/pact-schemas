@@ -21,3 +21,6 @@ npm run prettier
 npm run typecheck
 npm run test
 ```
+
+Or, if you're just interested in the actual schemas themselves, have a look
+[here](./dist)
