@@ -58,6 +58,8 @@ import { pacticipant } from "./pacticipant";
 import { request, requestV2, requestV3, requestV4 } from "./request";
 import { response, responseV2, responseV3, responseV4 } from "./response";
 
+const $schema = "http://json-schema.org/draft-07/schema";
+
 export const PactV1Schema = Type.Strict(
   Type.Object(
     {
@@ -67,6 +69,7 @@ export const PactV1Schema = Type.Strict(
       provider: Type.Ref(pacticipant),
     },
     {
+      $schema,
       title: "Pact V1",
       description: "Schema for a Pact file",
       definitions: {
@@ -91,6 +94,7 @@ export const PactV2Schema = Type.Strict(
       provider: Type.Ref(pacticipant),
     },
     {
+      $schema,
       title: "Pact V2",
       description: "Schema for a Pact file",
       definitions: {
@@ -119,6 +123,7 @@ export const PactV3Schema = Type.Strict(
       provider: Type.Ref(pacticipant),
     },
     {
+      $schema,
       title: "Pact V3",
       description: "Schema for a Pact file",
       definitions: {
@@ -176,6 +181,7 @@ export const PactV4Schema = Type.Strict(
       provider: Type.Ref(pacticipant),
     },
     {
+      $schema,
       title: "Pact V4",
       description: "Schema for a Pact file",
       definitions: {

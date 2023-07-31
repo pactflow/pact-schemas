@@ -1,4 +1,5 @@
 {
+  "$schema": "http://json-schema.org/draft-07/schema",
   "title": "Pact V1",
   "description": "Schema for a Pact file",
   "definitions": {
