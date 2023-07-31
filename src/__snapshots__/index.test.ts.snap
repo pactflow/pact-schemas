@@ -2,6 +2,7 @@
 
 exports[`Pact > v1 > can be serialised 1`] = `
 {
+  "$schema": "http://json-schema.org/draft-07/schema",
   "definitions": {
     "headers": {
       "$id": "#/definitions/headers",
@@ -196,6 +197,7 @@ exports[`Pact > v1 > can be serialised 1`] = `
 
 exports[`Pact > v2 > can be serialised 1`] = `
 {
+  "$schema": "http://json-schema.org/draft-07/schema",
   "definitions": {
     "headers": {
       "$id": "#/definitions/headers",
@@ -448,6 +450,7 @@ exports[`Pact > v2 > can be serialised 1`] = `
 
 exports[`Pact > v3 > can be serialised 1`] = `
 {
+  "$schema": "http://json-schema.org/draft-07/schema",
   "definitions": {
     "bodyGenerator": {
       "$id": "#/definitions/bodyGenerator",
@@ -1344,6 +1347,7 @@ exports[`Pact > v3 > can be serialised 1`] = `
 
 exports[`Pact > v4 > can be serialised 1`] = `
 {
+  "$schema": "http://json-schema.org/draft-07/schema",
   "definitions": {
     "body": {
       "$id": "#/definitions/body",
