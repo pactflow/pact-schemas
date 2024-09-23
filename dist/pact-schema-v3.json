@@ -671,8 +671,32 @@
         "description": {
           "type": "string"
         },
-        "providerState": {
-          "type": "string"
+        "providerStates": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "params": {
+                    "type": "object",
+                    "patternProperties": {
+                      "^(.*)$": {}
+                    }
+                  }
+                },
+                "required": [
+                  "name"
+                ]
+              }
+            }
+          ]
         }
       },
       "required": [
