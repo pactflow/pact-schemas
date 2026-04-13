@@ -33,7 +33,9 @@ export const request = Type.Object(
     ]),
     path: Type.String(),
     query: Type.Optional(
-      Type.String({ pattern: "^$|^[^=&]+=[^=&]+&?$|^[^=&]+=[^=&]+(&[^=&]+=[^=&]+)*&?$" }),
+      Type.String({
+        pattern: "^$|^[^=&]+=[^=&]+&?$|^[^=&]+=[^=&]+(&[^=&]+=[^=&]+)*&?$",
+      }),
     ),
   },
   { $id, additionalProperties: false },

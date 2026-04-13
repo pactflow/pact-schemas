@@ -7,6 +7,9 @@
       "$id": "#/definitions/genDate",
       "additionalProperties": false,
       "type": "object",
+      "required": [
+        "type"
+      ],
       "properties": {
         "type": {
           "const": "Date",
@@ -15,15 +18,15 @@
         "format": {
           "type": "string"
         }
-      },
-      "required": [
-        "type"
-      ]
+      }
     },
     "genDateTime": {
       "$id": "#/definitions/genDateTime",
       "additionalProperties": false,
       "type": "object",
+      "required": [
+        "type"
+      ],
       "properties": {
         "type": {
           "const": "DateTime",
@@ -32,29 +35,30 @@
         "format": {
           "type": "string"
         }
-      },
-      "required": [
-        "type"
-      ]
+      }
     },
     "genRandomBoolean": {
       "$id": "#/definitions/genRandomBoolean",
       "additionalProperties": false,
       "type": "object",
+      "required": [
+        "type"
+      ],
       "properties": {
         "type": {
           "const": "RandomBoolean",
           "type": "string"
         }
-      },
-      "required": [
-        "type"
-      ]
+      }
     },
     "genRandomDecimal": {
       "$id": "#/definitions/genRandomDecimal",
       "additionalProperties": false,
       "type": "object",
+      "required": [
+        "type",
+        "digits"
+      ],
       "properties": {
         "type": {
           "const": "RandomDecimal",
@@ -63,16 +67,16 @@
         "digits": {
           "type": "number"
         }
-      },
-      "required": [
-        "type",
-        "digits"
-      ]
+      }
     },
     "genRandomHexadecimal": {
       "$id": "#/definitions/genRandomHexadecimal",
       "additionalProperties": false,
       "type": "object",
+      "required": [
+        "type",
+        "digits"
+      ],
       "properties": {
         "type": {
           "const": "RandomHexadecimal",
@@ -81,16 +85,17 @@
         "digits": {
           "type": "number"
         }
-      },
-      "required": [
-        "type",
-        "digits"
-      ]
+      }
     },
     "genRandomInt": {
       "$id": "#/definitions/genRandomInt",
       "additionalProperties": false,
       "type": "object",
+      "required": [
+        "type",
+        "min",
+        "max"
+      ],
       "properties": {
         "type": {
           "const": "RandomInt",
@@ -102,17 +107,16 @@
         "max": {
           "type": "number"
         }
-      },
-      "required": [
-        "type",
-        "min",
-        "max"
-      ]
+      }
     },
     "genRandomString": {
       "$id": "#/definitions/genRandomString",
       "additionalProperties": false,
       "type": "object",
+      "required": [
+        "type",
+        "size"
+      ],
       "properties": {
         "type": {
           "const": "RandomString",
@@ -121,16 +125,16 @@
         "size": {
           "type": "number"
         }
-      },
-      "required": [
-        "type",
-        "size"
-      ]
+      }
     },
     "genRegex": {
       "$id": "#/definitions/genRegex",
       "additionalProperties": false,
       "type": "object",
+      "required": [
+        "type",
+        "regex"
+      ],
       "properties": {
         "type": {
           "const": "Regex",
@@ -139,16 +143,15 @@
         "regex": {
           "type": "string"
         }
-      },
-      "required": [
-        "type",
-        "regex"
-      ]
+      }
     },
     "genTime": {
       "$id": "#/definitions/genTime",
       "additionalProperties": false,
       "type": "object",
+      "required": [
+        "type"
+      ],
       "properties": {
         "type": {
           "const": "Time",
@@ -157,24 +160,21 @@
         "format": {
           "type": "string"
         }
-      },
-      "required": [
-        "type"
-      ]
+      }
     },
     "genUuid": {
       "$id": "#/definitions/genUuid",
       "additionalProperties": false,
       "type": "object",
+      "required": [
+        "type"
+      ],
       "properties": {
         "type": {
           "const": "Uuid",
           "type": "string"
         }
-      },
-      "required": [
-        "type"
-      ]
+      }
     },
     "bodyGenerator": {
       "$id": "#/definitions/bodyGenerator",
@@ -259,6 +259,11 @@
       "$id": "#/definitions/interaction",
       "additionalProperties": false,
       "type": "object",
+      "required": [
+        "description",
+        "request",
+        "response"
+      ],
       "properties": {
         "description": {
           "type": "string"
@@ -278,6 +283,9 @@
               "type": "array",
               "items": {
                 "type": "object",
+                "required": [
+                  "name"
+                ],
                 "properties": {
                   "name": {
                     "type": "string"
@@ -288,20 +296,12 @@
                       "^(.*)$": {}
                     }
                   }
-                },
-                "required": [
-                  "name"
-                ]
+                }
               }
             }
           ]
         }
-      },
-      "required": [
-        "description",
-        "request",
-        "response"
-      ]
+      }
     },
     "interactions": {
       "$id": "#/definitions/interactions",
@@ -314,20 +314,24 @@
       "$id": "#/definitions/matchBoolean",
       "additionalProperties": false,
       "type": "object",
+      "required": [
+        "match"
+      ],
       "properties": {
         "match": {
           "const": "boolean",
           "type": "string"
         }
-      },
-      "required": [
-        "match"
-      ]
+      }
     },
     "matchContentType": {
       "$id": "#/definitions/matchContentType",
       "additionalProperties": false,
       "type": "object",
+      "required": [
+        "match",
+        "value"
+      ],
       "properties": {
         "match": {
           "const": "contentType",
@@ -336,16 +340,16 @@
         "value": {
           "type": "string"
         }
-      },
-      "required": [
-        "match",
-        "value"
-      ]
+      }
     },
     "matchDate": {
       "$id": "#/definitions/matchDate",
       "additionalProperties": false,
       "type": "object",
+      "required": [
+        "match",
+        "format"
+      ],
       "properties": {
         "match": {
           "const": "date",
@@ -354,16 +358,16 @@
         "format": {
           "type": "string"
         }
-      },
-      "required": [
-        "match",
-        "format"
-      ]
+      }
     },
     "matchDatetime": {
       "$id": "#/definitions/matchDatetime",
       "additionalProperties": false,
       "type": "object",
+      "required": [
+        "match",
+        "format"
+      ],
       "properties": {
         "match": {
           "const": "datetime",
@@ -372,44 +376,44 @@
         "format": {
           "type": "string"
         }
-      },
-      "required": [
-        "match",
-        "format"
-      ]
+      }
     },
     "matchDecimal": {
       "$id": "#/definitions/matchDecimal",
       "additionalProperties": false,
       "type": "object",
+      "required": [
+        "match"
+      ],
       "properties": {
         "match": {
           "const": "decimal",
           "type": "string"
         }
-      },
-      "required": [
-        "match"
-      ]
+      }
     },
     "matchEquality": {
       "$id": "#/definitions/matchEquality",
       "additionalProperties": false,
       "type": "object",
+      "required": [
+        "match"
+      ],
       "properties": {
         "match": {
           "const": "equality",
           "type": "string"
         }
-      },
-      "required": [
-        "match"
-      ]
+      }
     },
     "matchInclude": {
       "$id": "#/definitions/matchInclude",
       "additionalProperties": false,
       "type": "object",
+      "required": [
+        "match",
+        "value"
+      ],
       "properties": {
         "match": {
           "const": "include",
@@ -418,58 +422,58 @@
         "value": {
           "type": "string"
         }
-      },
-      "required": [
-        "match",
-        "value"
-      ]
+      }
     },
     "matchInteger": {
       "$id": "#/definitions/matchInteger",
       "additionalProperties": false,
       "type": "object",
+      "required": [
+        "match"
+      ],
       "properties": {
         "match": {
           "const": "integer",
           "type": "string"
         }
-      },
-      "required": [
-        "match"
-      ]
+      }
     },
     "matchNull": {
       "$id": "#/definitions/matchNull",
       "additionalProperties": false,
       "type": "object",
+      "required": [
+        "match"
+      ],
       "properties": {
         "match": {
           "const": "null",
           "type": "string"
         }
-      },
-      "required": [
-        "match"
-      ]
+      }
     },
     "matchNumber": {
       "$id": "#/definitions/matchNumber",
       "additionalProperties": false,
       "type": "object",
+      "required": [
+        "match"
+      ],
       "properties": {
         "match": {
           "const": "number",
           "type": "string"
         }
-      },
-      "required": [
-        "match"
-      ]
+      }
     },
     "matchRegex": {
       "$id": "#/definitions/matchRegex",
       "additionalProperties": false,
       "type": "object",
+      "required": [
+        "match",
+        "regex"
+      ],
       "properties": {
         "match": {
           "const": "regex",
@@ -478,16 +482,16 @@
         "regex": {
           "type": "string"
         }
-      },
-      "required": [
-        "match",
-        "regex"
-      ]
+      }
     },
     "matchTime": {
       "$id": "#/definitions/matchTime",
       "additionalProperties": false,
       "type": "object",
+      "required": [
+        "match",
+        "format"
+      ],
       "properties": {
         "match": {
           "const": "time",
@@ -496,16 +500,15 @@
         "format": {
           "type": "string"
         }
-      },
-      "required": [
-        "match",
-        "format"
-      ]
+      }
     },
     "matchType": {
       "$id": "#/definitions/matchType",
       "additionalProperties": false,
       "type": "object",
+      "required": [
+        "match"
+      ],
       "properties": {
         "match": {
           "const": "type",
@@ -517,29 +520,29 @@
         "min": {
           "type": "number"
         }
-      },
-      "required": [
-        "match"
-      ]
+      }
     },
     "matchValues": {
       "$id": "#/definitions/matchValues",
       "additionalProperties": false,
       "type": "object",
+      "required": [
+        "match"
+      ],
       "properties": {
         "match": {
           "const": "values",
           "type": "string"
         }
-      },
-      "required": [
-        "match"
-      ]
+      }
     },
     "matchers": {
       "$id": "#/definitions/matchers",
       "additionalProperties": false,
       "type": "object",
+      "required": [
+        "matchers"
+      ],
       "properties": {
         "combine": {
           "anyOf": [
@@ -602,10 +605,7 @@
             ]
           }
         }
-      },
-      "required": [
-        "matchers"
-      ]
+      }
     },
     "matchingRules": {
       "$id": "#/definitions/matchingRules",
@@ -630,6 +630,10 @@
       "$id": "#/definitions/message",
       "additionalProperties": false,
       "type": "object",
+      "required": [
+        "contents",
+        "description"
+      ],
       "properties": {
         "contents": {},
         "metadata": {
@@ -647,14 +651,14 @@
         "matchingRules": {
           "additionalProperties": false,
           "type": "object",
+          "required": [
+            "body"
+          ],
           "properties": {
             "body": {
               "$ref": "#/definitions/bodyMatcher"
             }
-          },
-          "required": [
-            "body"
-          ]
+          }
         },
         "generators": {
           "additionalProperties": false,
@@ -674,11 +678,7 @@
         "providerState": {
           "type": "string"
         }
-      },
-      "required": [
-        "contents",
-        "description"
-      ]
+      }
     },
     "messages": {
       "$id": "#/definitions/messages",
@@ -694,14 +694,14 @@
         "pactSpecification": {
           "additionalProperties": false,
           "type": "object",
+          "required": [
+            "version"
+          ],
           "properties": {
             "version": {
               "type": "string"
             }
-          },
-          "required": [
-            "version"
-          ]
+          }
         },
         "pactSpecificationVersion": {
           "type": "string"
@@ -709,14 +709,14 @@
         "pact-specification": {
           "additionalProperties": false,
           "type": "object",
+          "required": [
+            "version"
+          ],
           "properties": {
             "version": {
               "type": "string"
             }
-          },
-          "required": [
-            "version"
-          ]
+          }
         }
       }
     },
@@ -741,19 +741,23 @@
     "pacticipant": {
       "$id": "#/definitions/pacticipant",
       "type": "object",
+      "required": [
+        "name"
+      ],
       "properties": {
         "name": {
           "type": "string"
         }
-      },
-      "required": [
-        "name"
-      ]
+      }
     },
     "request": {
       "$id": "#/definitions/request",
       "additionalProperties": false,
       "type": "object",
+      "required": [
+        "method",
+        "path"
+      ],
       "properties": {
         "body": {},
         "headers": {
@@ -826,16 +830,15 @@
             }
           ]
         }
-      },
-      "required": [
-        "method",
-        "path"
-      ]
+      }
     },
     "response": {
       "$id": "#/definitions/response",
       "additionalProperties": false,
       "type": "object",
+      "required": [
+        "status"
+      ],
       "properties": {
         "body": {},
         "headers": {
@@ -863,13 +866,14 @@
             }
           }
         }
-      },
-      "required": [
-        "status"
-      ]
+      }
     }
   },
   "type": "object",
+  "required": [
+    "consumer",
+    "provider"
+  ],
   "properties": {
     "consumer": {
       "$ref": "#/definitions/pacticipant"
@@ -886,9 +890,5 @@
     "provider": {
       "$ref": "#/definitions/pacticipant"
     }
-  },
-  "required": [
-    "consumer",
-    "provider"
-  ]
+  }
 }

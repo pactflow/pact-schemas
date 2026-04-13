@@ -28,9 +28,13 @@
       ]
     },
     "interaction": {
-      "$id": "#/definitions/interaction",
       "additionalProperties": false,
       "type": "object",
+      "required": [
+        "description",
+        "request",
+        "response"
+      ],
       "properties": {
         "description": {
           "type": "string"
@@ -44,12 +48,7 @@
         "response": {
           "$ref": "#/definitions/response"
         }
-      },
-      "required": [
-        "description",
-        "request",
-        "response"
-      ]
+      }
     },
     "interactions": {
       "$id": "#/definitions/interactions",
@@ -62,6 +61,10 @@
       "$id": "#/definitions/matchRegex",
       "additionalProperties": false,
       "type": "object",
+      "required": [
+        "match",
+        "regex"
+      ],
       "properties": {
         "match": {
           "const": "regex",
@@ -70,16 +73,15 @@
         "regex": {
           "type": "string"
         }
-      },
-      "required": [
-        "match",
-        "regex"
-      ]
+      }
     },
     "matchType": {
       "$id": "#/definitions/matchType",
       "additionalProperties": false,
       "type": "object",
+      "required": [
+        "match"
+      ],
       "properties": {
         "match": {
           "const": "type",
@@ -91,10 +93,7 @@
         "min": {
           "type": "number"
         }
-      },
-      "required": [
-        "match"
-      ]
+      }
     },
     "matchingRules": {
       "$id": "#/definitions/matchingRules",
@@ -120,14 +119,14 @@
         "pactSpecification": {
           "additionalProperties": false,
           "type": "object",
+          "required": [
+            "version"
+          ],
           "properties": {
             "version": {
               "type": "string"
             }
-          },
-          "required": [
-            "version"
-          ]
+          }
         },
         "pactSpecificationVersion": {
           "type": "string"
@@ -135,33 +134,37 @@
         "pact-specification": {
           "additionalProperties": false,
           "type": "object",
+          "required": [
+            "version"
+          ],
           "properties": {
             "version": {
               "type": "string"
             }
-          },
-          "required": [
-            "version"
-          ]
+          }
         }
       }
     },
     "pacticipant": {
       "$id": "#/definitions/pacticipant",
       "type": "object",
+      "required": [
+        "name"
+      ],
       "properties": {
         "name": {
           "type": "string"
         }
-      },
-      "required": [
-        "name"
-      ]
+      }
     },
     "request": {
       "$id": "#/definitions/request",
       "additionalProperties": false,
       "type": "object",
+      "required": [
+        "method",
+        "path"
+      ],
       "properties": {
         "body": {},
         "headers": {
@@ -192,22 +195,21 @@
           "type": "string"
         },
         "query": {
-          "type": "string",
-          "pattern": "^$|^[^=&]+=[^=&]+&?$|^[^=&]+=[^=&]+(&[^=&]+=[^=&]+)*&?$"
+          "pattern": "^$|^[^=&]+=[^=&]+&?$|^[^=&]+=[^=&]+(&[^=&]+=[^=&]+)*&?$",
+          "type": "string"
         },
         "matchingRules": {
           "$ref": "#/definitions/matchingRules"
         }
-      },
-      "required": [
-        "method",
-        "path"
-      ]
+      }
     },
     "response": {
       "$id": "#/definitions/response",
       "additionalProperties": false,
       "type": "object",
+      "required": [
+        "status"
+      ],
       "properties": {
         "body": {},
         "headers": {
@@ -221,13 +223,15 @@
         "matchingRules": {
           "$ref": "#/definitions/matchingRules"
         }
-      },
-      "required": [
-        "status"
-      ]
+      }
     }
   },
   "type": "object",
+  "required": [
+    "consumer",
+    "interactions",
+    "provider"
+  ],
   "properties": {
     "consumer": {
       "$ref": "#/definitions/pacticipant"
@@ -241,10 +245,5 @@
     "provider": {
       "$ref": "#/definitions/pacticipant"
     }
-  },
-  "required": [
-    "consumer",
-    "interactions",
-    "provider"
-  ]
+  }
 }
