@@ -7,5 +7,5 @@ export const headers = Type.Union(
     Type.Record(Type.String(), Type.String()),
     Type.Record(Type.String(), Type.Array(Type.String())),
   ],
-  { $id }
+  { $id },
 );

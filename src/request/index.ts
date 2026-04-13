@@ -33,10 +33,10 @@ export const request = Type.Object(
     ]),
     path: Type.String(),
     query: Type.Optional(
-      Type.RegEx(/^$|^[^=&]+=[^=&]+&?$|^[^=&]+=[^=&]+(&[^=&]+=[^=&]+)*&?$/)
+      Type.RegEx(/^$|^[^=&]+=[^=&]+&?$|^[^=&]+=[^=&]+(&[^=&]+=[^=&]+)*&?$/),
     ),
   },
-  { $id, additionalProperties: false }
+  { $id, additionalProperties: false },
 );
 
 export const requestV2 = Type.Composite(
@@ -46,7 +46,7 @@ export const requestV2 = Type.Composite(
       matchingRules: Type.Optional(Type.Ref(matchingRules)),
     }),
   ],
-  { $id, additionalProperties: false }
+  { $id, additionalProperties: false },
 );
 
 export const requestV3 = Type.Composite(
@@ -59,17 +59,17 @@ export const requestV3 = Type.Composite(
           headers: Type.Optional(Type.Ref(recordGenerator)),
           path: Type.Optional(Type.Ref(recordGenerator)),
           query: Type.Optional(Type.Ref(generator)),
-        })
+        }),
       ),
       query: Type.Optional(
         Type.Union([
           Type.Record(Type.String(), Type.String()),
           Type.Record(Type.String(), Type.Array(Type.String())),
-        ])
+        ]),
       ),
     }),
   ],
-  { $id, additionalProperties: false }
+  { $id, additionalProperties: false },
 );
 
 export const requestV4 = Type.Composite(
@@ -79,5 +79,5 @@ export const requestV4 = Type.Composite(
       body: Type.Optional(Type.Ref(body)),
     }),
   ],
-  { $id, additionalProperties: false }
+  { $id, additionalProperties: false },
 );

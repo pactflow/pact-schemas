@@ -9,7 +9,7 @@ export const bodyGenerator = Type.Record(
   {
     $id,
     additionalProperties: false,
-  }
+  },
 );
 
 export const bodyGeneratorV4 = Type.Record(
@@ -18,5 +18,5 @@ export const bodyGeneratorV4 = Type.Record(
   {
     $id,
     additionalProperties: false,
-  }
+  },
 );

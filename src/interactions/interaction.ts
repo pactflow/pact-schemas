@@ -13,7 +13,7 @@ export const interaction = Type.Object(
     request: Type.Ref(request),
     response: Type.Ref(response),
   },
-  { $id, additionalProperties: false }
+  { $id, additionalProperties: false },
 );
 
 export const interactionV2 = Type.Omit(interaction, ["provider_state"]);
@@ -29,13 +29,13 @@ export const interactionV3 = Type.Composite(
             Type.Object({
               name: Type.String(),
               params: Type.Optional(Type.Record(Type.String(), Type.Unknown())),
-            })
+            }),
           ),
-        ])
+        ]),
       ),
     }),
   ],
-  { $id, additionalProperties: false }
+  { $id, additionalProperties: false },
 );
 
 // TODO: DRY these
@@ -44,7 +44,7 @@ const commonInteractionV4 = Type.Object({
     Type.Object({
       testname: Type.Optional(Type.String()),
       text: Type.Optional(Type.Array(Type.String())),
-    })
+    }),
   ),
   interactionMarkup: Type.Optional(
     Type.Object(
@@ -55,13 +55,13 @@ const commonInteractionV4 = Type.Object({
           Type.Literal("HTML"),
         ]),
       },
-      { additionalProperties: false }
-    )
+      { additionalProperties: false },
+    ),
   ),
   key: Type.Optional(Type.String()),
   pending: Type.Optional(Type.Boolean()),
   pluginConfiguration: Type.Optional(
-    Type.Record(Type.String(), Type.Record(Type.String(), Type.Unknown()))
+    Type.Record(Type.String(), Type.Record(Type.String(), Type.Unknown())),
   ),
 });
 
@@ -75,7 +75,7 @@ export const interactionV4 = Type.Union(
           type: Type.Literal("Synchronous/HTTP"),
         }),
       ],
-      { additionalProperties: false }
+      { additionalProperties: false },
     ),
     Type.Composite(
       [
@@ -86,7 +86,7 @@ export const interactionV4 = Type.Union(
           type: Type.Literal("Asynchronous/Messages"),
         }),
       ],
-      { additionalProperties: false }
+      { additionalProperties: false },
     ),
     Type.Composite(
       [
@@ -98,8 +98,8 @@ export const interactionV4 = Type.Union(
           type: Type.Literal("Synchronous/Messages"),
         }),
       ],
-      { additionalProperties: false }
+      { additionalProperties: false },
     ),
   ],
-  { $id }
+  { $id },
 );

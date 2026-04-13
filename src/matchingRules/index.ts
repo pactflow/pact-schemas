@@ -19,5 +19,5 @@ export const matchingRulesV3 = Type.Object(
     path: Type.Optional(Type.Ref(matchers)),
     query: Type.Optional(Type.Ref(recordMatcher)),
   },
-  { $id, additionalProperties: false }
+  { $id, additionalProperties: false },
 );

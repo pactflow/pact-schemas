@@ -7,7 +7,7 @@ export const genDate = Type.Object(
     type: Type.Literal("Date"),
     format: Type.Optional(Type.String()),
   },
-  { $id: "#/definitions/genDate", additionalProperties: false }
+  { $id: "#/definitions/genDate", additionalProperties: false },
 );
 
 export const genDateTime = Type.Object(
@@ -15,14 +15,14 @@ export const genDateTime = Type.Object(
     type: Type.Literal("DateTime"),
     format: Type.Optional(Type.String()),
   },
-  { $id: "#/definitions/genDateTime", additionalProperties: false }
+  { $id: "#/definitions/genDateTime", additionalProperties: false },
 );
 
 export const genRandomBoolean = Type.Object(
   {
     type: Type.Literal("RandomBoolean"),
   },
-  { $id: "#/definitions/genRandomBoolean", additionalProperties: false }
+  { $id: "#/definitions/genRandomBoolean", additionalProperties: false },
 );
 
 export const genRandomDecimal = Type.Object(
@@ -30,7 +30,7 @@ export const genRandomDecimal = Type.Object(
     type: Type.Literal("RandomDecimal"),
     digits: Type.Number(),
   },
-  { $id: "#/definitions/genRandomDecimal", additionalProperties: false }
+  { $id: "#/definitions/genRandomDecimal", additionalProperties: false },
 );
 
 export const genRandomHexadecimal = Type.Object(
@@ -38,7 +38,7 @@ export const genRandomHexadecimal = Type.Object(
     type: Type.Literal("RandomHexadecimal"),
     digits: Type.Number(),
   },
-  { $id: "#/definitions/genRandomHexadecimal", additionalProperties: false }
+  { $id: "#/definitions/genRandomHexadecimal", additionalProperties: false },
 );
 
 export const genRandomInt = Type.Object(
@@ -47,7 +47,7 @@ export const genRandomInt = Type.Object(
     min: Type.Number(),
     max: Type.Number(),
   },
-  { $id: "#/definitions/genRandomInt", additionalProperties: false }
+  { $id: "#/definitions/genRandomInt", additionalProperties: false },
 );
 
 export const genRandomString = Type.Object(
@@ -55,7 +55,7 @@ export const genRandomString = Type.Object(
     type: Type.Literal("RandomString"),
     size: Type.Number(),
   },
-  { $id: "#/definitions/genRandomString", additionalProperties: false }
+  { $id: "#/definitions/genRandomString", additionalProperties: false },
 );
 
 export const genRegex = Type.Object(
@@ -63,7 +63,7 @@ export const genRegex = Type.Object(
     type: Type.Literal("Regex"),
     regex: Type.String(),
   },
-  { $id: "#/definitions/genRegex", additionalProperties: false }
+  { $id: "#/definitions/genRegex", additionalProperties: false },
 );
 
 export const genTime = Type.Object(
@@ -71,14 +71,14 @@ export const genTime = Type.Object(
     type: Type.Literal("Time"),
     format: Type.Optional(Type.String()),
   },
-  { $id: "#/definitions/genTime", additionalProperties: false }
+  { $id: "#/definitions/genTime", additionalProperties: false },
 );
 
 export const genUuid = Type.Object(
   {
     type: Type.Literal("Uuid"),
   },
-  { $id: "#/definitions/genUuid", additionalProperties: false }
+  { $id: "#/definitions/genUuid", additionalProperties: false },
 );
 
 // V4 generators
@@ -89,7 +89,7 @@ export const genMockServerURL = Type.Object(
     regex: Type.String(),
     example: Type.String(),
   },
-  { $id: "#/definitions/genMockServerURL", additionalProperties: false }
+  { $id: "#/definitions/genMockServerURL", additionalProperties: false },
 );
 
 export const genProviderState = Type.Object(
@@ -97,7 +97,7 @@ export const genProviderState = Type.Object(
     type: Type.Literal("ProviderState"),
     expression: Type.String(),
   },
-  { $id: "#/definitions/genProviderState", additionalProperties: false }
+  { $id: "#/definitions/genProviderState", additionalProperties: false },
 );
 
 export const genUuidFormat = Type.Object(
@@ -110,7 +110,7 @@ export const genUuidFormat = Type.Object(
       Type.Literal("URN"),
     ]),
   },
-  { $id: "#/definitions/genUuidFormat", additionalProperties: false }
+  { $id: "#/definitions/genUuidFormat", additionalProperties: false },
 );
 
 export const genV3 = [

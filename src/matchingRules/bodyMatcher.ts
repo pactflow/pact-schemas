@@ -8,5 +8,5 @@ export const bodyMatcher = Type.Record(
   Type.Ref(matchers),
   {
     $id,
-  }
+  },
 );

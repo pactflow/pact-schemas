@@ -14,7 +14,7 @@ const pactFile = (version: string, status: string, file: string) => {
     "examples",
     version,
     status,
-    file
+    file,
   );
   return JSON.parse(fs.readFileSync(filePath).toString());
 };

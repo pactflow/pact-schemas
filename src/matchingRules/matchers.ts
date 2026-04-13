@@ -6,19 +6,19 @@ const $id = "#/definitions/matchers";
 export const matchers = Type.Object(
   {
     combine: Type.Optional(
-      Type.Union([Type.Literal("AND"), Type.Literal("OR")])
+      Type.Union([Type.Literal("AND"), Type.Literal("OR")]),
     ),
     matchers: Type.Array(Type.Union([...matchV2, ...matchV3])),
   },
-  { $id, additionalProperties: false }
+  { $id, additionalProperties: false },
 );
 
 export const matchersV4 = Type.Object(
   {
     combine: Type.Optional(
-      Type.Union([Type.Literal("AND"), Type.Literal("OR")])
+      Type.Union([Type.Literal("AND"), Type.Literal("OR")]),
     ),
     matchers: Type.Array(Type.Union([...matchV2, ...matchV3, ...matchV4])),
   },
-  { $id, additionalProperties: false }
+  { $id, additionalProperties: false },
 );

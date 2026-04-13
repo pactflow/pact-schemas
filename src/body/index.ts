@@ -9,5 +9,5 @@ export const body = Type.Object(
     contentTypeHint: Type.Union([Type.Literal("BINARY"), Type.Literal("TEXT")]),
     encoded: Type.Union([Type.Boolean(), Type.String()]),
   },
-  { $id, additionalProperties: false }
+  { $id, additionalProperties: false },
 );

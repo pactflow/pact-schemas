@@ -81,8 +81,8 @@ export const PactV1Schema = Type.Strict(
         request,
         response,
       },
-    }
-  )
+    },
+  ),
 );
 
 export const PactV2Schema = Type.Strict(
@@ -109,8 +109,8 @@ export const PactV2Schema = Type.Strict(
         request: requestV2,
         response: responseV2,
       },
-    }
-  )
+    },
+  ),
 );
 
 export const PactV3Schema = Type.Strict(
@@ -168,8 +168,8 @@ export const PactV3Schema = Type.Strict(
         request: requestV3,
         response: responseV3,
       },
-    }
-  )
+    },
+  ),
 );
 
 export const PactV4Schema = Type.Strict(
@@ -235,8 +235,8 @@ export const PactV4Schema = Type.Strict(
         request: requestV4,
         response: responseV4,
       },
-    }
-  )
+    },
+  ),
 );
 
 export type PactV1 = Static<typeof PactV1Schema>;

@@ -9,8 +9,8 @@ export const metadata = Type.Object(
         {
           version: Type.String(),
         },
-        { additionalProperties: false }
-      )
+        { additionalProperties: false },
+      ),
     ),
     pactSpecificationVersion: Type.Optional(Type.String()),
     "pact-specification": Type.Optional(
@@ -18,15 +18,15 @@ export const metadata = Type.Object(
         {
           version: Type.String(),
         },
-        { additionalProperties: false }
-      )
+        { additionalProperties: false },
+      ),
     ),
   },
-  { $id }
+  { $id },
 );
 
 export const metadataV4 = Type.Omit(
   metadata,
   ["pactSpecificationVersion", "pact-specification"],
-  { $id }
+  { $id },
 );
