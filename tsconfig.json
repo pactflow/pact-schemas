@@ -1,9 +1,10 @@
 {
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "build.ts"],
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
     "strict": true,
-    "target": "esnext"
+    "target": "esnext",
+    "types": ["node"]
   }
 }

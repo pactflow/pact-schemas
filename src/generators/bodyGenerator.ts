@@ -4,7 +4,7 @@ import { generator } from "./";
 const $id = "#/definitions/bodyGenerator";
 
 export const bodyGenerator = Type.Record(
-  Type.RegEx(/^\$.*$/),
+  Type.String({ pattern: "^\\$.*$" }),
   Type.Ref(generator),
   {
     $id,
@@ -13,7 +13,7 @@ export const bodyGenerator = Type.Record(
 );
 
 export const bodyGeneratorV4 = Type.Record(
-  Type.RegEx(/^\$.*$/),
+  Type.String({ pattern: "^\\$.*$" }),
   Type.Ref(generator),
   {
     $id,

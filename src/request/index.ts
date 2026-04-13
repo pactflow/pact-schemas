@@ -33,7 +33,7 @@ export const request = Type.Object(
     ]),
     path: Type.String(),
     query: Type.Optional(
-      Type.RegEx(/^$|^[^=&]+=[^=&]+&?$|^[^=&]+=[^=&]+(&[^=&]+=[^=&]+)*&?$/),
+      Type.String({ pattern: "^$|^[^=&]+=[^=&]+&?$|^[^=&]+=[^=&]+(&[^=&]+=[^=&]+)*&?$" }),
     ),
   },
   { $id, additionalProperties: false },

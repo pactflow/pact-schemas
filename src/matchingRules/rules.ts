@@ -124,7 +124,7 @@ export const matchEachKey = Type.Object(
   {
     match: Type.Literal("eachKey"),
     rules: Type.Array(Type.Unknown()), // FIXME
-    value: Type.RegEx(/^\$.*$/),
+    value: Type.String({ pattern: "^\\$.*$" }),
   },
   { $id: "#/definitions/matchEachKey", additionalProperties: false },
 );
@@ -133,7 +133,7 @@ export const matchEachValue = Type.Object(
   {
     match: Type.Literal("eachValue"),
     rules: Type.Array(Type.Unknown()), // FIXME
-    value: Type.RegEx(/^\$.*$/),
+    value: Type.String({ pattern: "^\\$.*$" }),
   },
   { $id: "#/definitions/matchEachValue", additionalProperties: false },
 );

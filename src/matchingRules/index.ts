@@ -7,7 +7,7 @@ import { recordMatcher } from "./recordMatcher";
 
 const $id = "#/definitions/matchingRules";
 
-export const matchingRules = Type.Record(Type.RegEx(/^\$.*$/), OneOf(matchV2), {
+export const matchingRules = Type.Record(Type.String({ pattern: "^\\$.*$" }), OneOf(matchV2), {
   $id,
   additionalProperties: false,
 });
