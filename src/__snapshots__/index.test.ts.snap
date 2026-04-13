@@ -11,22 +11,28 @@ exports[`Pact > v1 > can be serialised 1`] = `
           "patternProperties": {
             "^(.*)$": {
               "type": "string",
+              Symbol(TypeBox.Kind): "String",
             },
           },
           "type": "object",
+          Symbol(TypeBox.Kind): "Record",
         },
         {
           "patternProperties": {
             "^(.*)$": {
               "items": {
                 "type": "string",
+                Symbol(TypeBox.Kind): "String",
               },
               "type": "array",
+              Symbol(TypeBox.Kind): "Array",
             },
           },
           "type": "object",
+          Symbol(TypeBox.Kind): "Record",
         },
       ],
+      Symbol(TypeBox.Kind): "Union",
     },
     "interaction": {
       "$id": "#/definitions/interaction",
@@ -34,18 +40,25 @@ exports[`Pact > v1 > can be serialised 1`] = `
       "properties": {
         "description": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
         },
         "providerState": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "provider_state": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "request": {
           "$ref": "#/definitions/request",
+          Symbol(TypeBox.Kind): "Ref",
         },
         "response": {
           "$ref": "#/definitions/response",
+          Symbol(TypeBox.Kind): "Ref",
         },
       },
       "required": [
@@ -54,13 +67,16 @@ exports[`Pact > v1 > can be serialised 1`] = `
         "response",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "interactions": {
       "$id": "#/definitions/interactions",
       "items": {
         "$ref": "#/definitions/interaction",
+        Symbol(TypeBox.Kind): "Ref",
       },
       "type": "array",
+      Symbol(TypeBox.Kind): "Array",
     },
     "metadata": {
       "$id": "#/definitions/metadata",
@@ -70,50 +86,66 @@ exports[`Pact > v1 > can be serialised 1`] = `
           "properties": {
             "version": {
               "type": "string",
+              Symbol(TypeBox.Kind): "String",
             },
           },
           "required": [
             "version",
           ],
           "type": "object",
+          Symbol(TypeBox.Kind): "Object",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "pactSpecification": {
           "additionalProperties": false,
           "properties": {
             "version": {
               "type": "string",
+              Symbol(TypeBox.Kind): "String",
             },
           },
           "required": [
             "version",
           ],
           "type": "object",
+          Symbol(TypeBox.Kind): "Object",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "pactSpecificationVersion": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
+          Symbol(TypeBox.Optional): "Optional",
         },
       },
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "pacticipant": {
       "$id": "#/definitions/pacticipant",
       "properties": {
         "name": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
         },
       },
       "required": [
         "name",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "request": {
       "$id": "#/definitions/request",
       "additionalProperties": false,
       "properties": {
-        "body": {},
+        "body": {
+          Symbol(TypeBox.Kind): "Unknown",
+          Symbol(TypeBox.Optional): "Optional",
+        },
         "headers": {
           "$ref": "#/definitions/headers",
+          Symbol(TypeBox.Kind): "Ref",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "method": {
           "enum": [
@@ -135,13 +167,17 @@ exports[`Pact > v1 > can be serialised 1`] = `
             "TRACE",
           ],
           "type": "string",
+          Symbol(TypeBox.Kind): "Unsafe",
         },
         "path": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
         },
         "query": {
           "pattern": "^$|^[^=&]+=[^=&]+&?$|^[^=&]+=[^=&]+(&[^=&]+=[^=&]+)*&?$",
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
+          Symbol(TypeBox.Optional): "Optional",
         },
       },
       "required": [
@@ -149,40 +185,53 @@ exports[`Pact > v1 > can be serialised 1`] = `
         "path",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "response": {
       "$id": "#/definitions/response",
       "additionalProperties": false,
       "properties": {
-        "body": {},
+        "body": {
+          Symbol(TypeBox.Kind): "Unknown",
+          Symbol(TypeBox.Optional): "Optional",
+        },
         "headers": {
           "$ref": "#/definitions/headers",
+          Symbol(TypeBox.Kind): "Ref",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "status": {
           "maximum": 599,
           "minimum": 100,
           "type": "integer",
+          Symbol(TypeBox.Kind): "Integer",
         },
       },
       "required": [
         "status",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
   },
   "description": "Schema for a Pact file",
   "properties": {
     "consumer": {
       "$ref": "#/definitions/pacticipant",
+      Symbol(TypeBox.Kind): "Ref",
     },
     "interactions": {
       "$ref": "#/definitions/interactions",
+      Symbol(TypeBox.Kind): "Ref",
     },
     "metadata": {
       "$ref": "#/definitions/metadata",
+      Symbol(TypeBox.Kind): "Ref",
+      Symbol(TypeBox.Optional): "Optional",
     },
     "provider": {
       "$ref": "#/definitions/pacticipant",
+      Symbol(TypeBox.Kind): "Ref",
     },
   },
   "required": [
@@ -192,6 +241,7 @@ exports[`Pact > v1 > can be serialised 1`] = `
   ],
   "title": "Pact V1",
   "type": "object",
+  Symbol(TypeBox.Kind): "Object",
 }
 `;
 
@@ -206,38 +256,48 @@ exports[`Pact > v2 > can be serialised 1`] = `
           "patternProperties": {
             "^(.*)$": {
               "type": "string",
+              Symbol(TypeBox.Kind): "String",
             },
           },
           "type": "object",
+          Symbol(TypeBox.Kind): "Record",
         },
         {
           "patternProperties": {
             "^(.*)$": {
               "items": {
                 "type": "string",
+                Symbol(TypeBox.Kind): "String",
               },
               "type": "array",
+              Symbol(TypeBox.Kind): "Array",
             },
           },
           "type": "object",
+          Symbol(TypeBox.Kind): "Record",
         },
       ],
+      Symbol(TypeBox.Kind): "Union",
     },
     "interaction": {
-      "$id": "#/definitions/interaction",
       "additionalProperties": false,
       "properties": {
         "description": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
         },
         "providerState": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "request": {
           "$ref": "#/definitions/request",
+          Symbol(TypeBox.Kind): "Ref",
         },
         "response": {
           "$ref": "#/definitions/response",
+          Symbol(TypeBox.Kind): "Ref",
         },
       },
       "required": [
@@ -246,13 +306,16 @@ exports[`Pact > v2 > can be serialised 1`] = `
         "response",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "interactions": {
       "$id": "#/definitions/interactions",
       "items": {
         "$ref": "#/definitions/interaction",
+        Symbol(TypeBox.Kind): "Ref",
       },
       "type": "array",
+      Symbol(TypeBox.Kind): "Array",
     },
     "matchRegex": {
       "$id": "#/definitions/matchRegex",
@@ -261,9 +324,11 @@ exports[`Pact > v2 > can be serialised 1`] = `
         "match": {
           "const": "regex",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
         "regex": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
         },
       },
       "required": [
@@ -271,6 +336,7 @@ exports[`Pact > v2 > can be serialised 1`] = `
         "regex",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "matchType": {
       "$id": "#/definitions/matchType",
@@ -279,35 +345,45 @@ exports[`Pact > v2 > can be serialised 1`] = `
         "match": {
           "const": "type",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
         "max": {
           "type": "number",
+          Symbol(TypeBox.Kind): "Number",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "min": {
           "type": "number",
+          Symbol(TypeBox.Kind): "Number",
+          Symbol(TypeBox.Optional): "Optional",
         },
       },
       "required": [
         "match",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "matchingRules": {
       "$id": "#/definitions/matchingRules",
       "additionalProperties": false,
       "patternProperties": {
-        "^\\\\$.*$": {
+        "^\\$.*$": {
           "oneOf": [
             {
               "$ref": "#/definitions/matchRegex",
+              Symbol(TypeBox.Kind): "Ref",
             },
             {
               "$ref": "#/definitions/matchType",
+              Symbol(TypeBox.Kind): "Ref",
             },
           ],
+          Symbol(TypeBox.Kind): "Unsafe",
         },
       },
       "type": "object",
+      Symbol(TypeBox.Kind): "Record",
     },
     "metadata": {
       "$id": "#/definitions/metadata",
@@ -317,53 +393,71 @@ exports[`Pact > v2 > can be serialised 1`] = `
           "properties": {
             "version": {
               "type": "string",
+              Symbol(TypeBox.Kind): "String",
             },
           },
           "required": [
             "version",
           ],
           "type": "object",
+          Symbol(TypeBox.Kind): "Object",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "pactSpecification": {
           "additionalProperties": false,
           "properties": {
             "version": {
               "type": "string",
+              Symbol(TypeBox.Kind): "String",
             },
           },
           "required": [
             "version",
           ],
           "type": "object",
+          Symbol(TypeBox.Kind): "Object",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "pactSpecificationVersion": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
+          Symbol(TypeBox.Optional): "Optional",
         },
       },
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "pacticipant": {
       "$id": "#/definitions/pacticipant",
       "properties": {
         "name": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
         },
       },
       "required": [
         "name",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "request": {
       "$id": "#/definitions/request",
       "additionalProperties": false,
       "properties": {
-        "body": {},
+        "body": {
+          Symbol(TypeBox.Kind): "Unknown",
+          Symbol(TypeBox.Optional): "Optional",
+        },
         "headers": {
           "$ref": "#/definitions/headers",
+          Symbol(TypeBox.Kind): "Ref",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "matchingRules": {
           "$ref": "#/definitions/matchingRules",
+          Symbol(TypeBox.Kind): "Ref",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "method": {
           "enum": [
@@ -385,13 +479,17 @@ exports[`Pact > v2 > can be serialised 1`] = `
             "TRACE",
           ],
           "type": "string",
+          Symbol(TypeBox.Kind): "Unsafe",
         },
         "path": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
         },
         "query": {
           "pattern": "^$|^[^=&]+=[^=&]+&?$|^[^=&]+=[^=&]+(&[^=&]+=[^=&]+)*&?$",
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
+          Symbol(TypeBox.Optional): "Optional",
         },
       },
       "required": [
@@ -399,43 +497,58 @@ exports[`Pact > v2 > can be serialised 1`] = `
         "path",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "response": {
       "$id": "#/definitions/response",
       "additionalProperties": false,
       "properties": {
-        "body": {},
+        "body": {
+          Symbol(TypeBox.Kind): "Unknown",
+          Symbol(TypeBox.Optional): "Optional",
+        },
         "headers": {
           "$ref": "#/definitions/headers",
+          Symbol(TypeBox.Kind): "Ref",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "matchingRules": {
           "$ref": "#/definitions/matchingRules",
+          Symbol(TypeBox.Kind): "Ref",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "status": {
           "maximum": 599,
           "minimum": 100,
           "type": "integer",
+          Symbol(TypeBox.Kind): "Integer",
         },
       },
       "required": [
         "status",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
   },
   "description": "Schema for a Pact file",
   "properties": {
     "consumer": {
       "$ref": "#/definitions/pacticipant",
+      Symbol(TypeBox.Kind): "Ref",
     },
     "interactions": {
       "$ref": "#/definitions/interactions",
+      Symbol(TypeBox.Kind): "Ref",
     },
     "metadata": {
       "$ref": "#/definitions/metadata",
+      Symbol(TypeBox.Kind): "Ref",
+      Symbol(TypeBox.Optional): "Optional",
     },
     "provider": {
       "$ref": "#/definitions/pacticipant",
+      Symbol(TypeBox.Kind): "Ref",
     },
   },
   "required": [
@@ -445,6 +558,7 @@ exports[`Pact > v2 > can be serialised 1`] = `
   ],
   "title": "Pact V2",
   "type": "object",
+  Symbol(TypeBox.Kind): "Object",
 }
 `;
 
@@ -456,20 +570,24 @@ exports[`Pact > v3 > can be serialised 1`] = `
       "$id": "#/definitions/bodyGenerator",
       "additionalProperties": false,
       "patternProperties": {
-        "^\\\\$.*$": {
+        "^\\$.*$": {
           "$ref": "#/definitions/generator",
+          Symbol(TypeBox.Kind): "Ref",
         },
       },
       "type": "object",
+      Symbol(TypeBox.Kind): "Record",
     },
     "bodyMatcher": {
       "$id": "#/definitions/bodyMatcher",
       "patternProperties": {
-        "^\\\\$.*$": {
+        "^\\$.*$": {
           "$ref": "#/definitions/matchers",
+          Symbol(TypeBox.Kind): "Ref",
         },
       },
       "type": "object",
+      Symbol(TypeBox.Kind): "Record",
     },
     "genDate": {
       "$id": "#/definitions/genDate",
@@ -477,16 +595,20 @@ exports[`Pact > v3 > can be serialised 1`] = `
       "properties": {
         "format": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "type": {
           "const": "Date",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
         "type",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "genDateTime": {
       "$id": "#/definitions/genDateTime",
@@ -494,16 +616,20 @@ exports[`Pact > v3 > can be serialised 1`] = `
       "properties": {
         "format": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "type": {
           "const": "DateTime",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
         "type",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "genRandomBoolean": {
       "$id": "#/definitions/genRandomBoolean",
@@ -512,12 +638,14 @@ exports[`Pact > v3 > can be serialised 1`] = `
         "type": {
           "const": "RandomBoolean",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
         "type",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "genRandomDecimal": {
       "$id": "#/definitions/genRandomDecimal",
@@ -525,10 +653,12 @@ exports[`Pact > v3 > can be serialised 1`] = `
       "properties": {
         "digits": {
           "type": "number",
+          Symbol(TypeBox.Kind): "Number",
         },
         "type": {
           "const": "RandomDecimal",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
@@ -536,6 +666,7 @@ exports[`Pact > v3 > can be serialised 1`] = `
         "digits",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "genRandomHexadecimal": {
       "$id": "#/definitions/genRandomHexadecimal",
@@ -543,10 +674,12 @@ exports[`Pact > v3 > can be serialised 1`] = `
       "properties": {
         "digits": {
           "type": "number",
+          Symbol(TypeBox.Kind): "Number",
         },
         "type": {
           "const": "RandomHexadecimal",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
@@ -554,6 +687,7 @@ exports[`Pact > v3 > can be serialised 1`] = `
         "digits",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "genRandomInt": {
       "$id": "#/definitions/genRandomInt",
@@ -561,13 +695,16 @@ exports[`Pact > v3 > can be serialised 1`] = `
       "properties": {
         "max": {
           "type": "number",
+          Symbol(TypeBox.Kind): "Number",
         },
         "min": {
           "type": "number",
+          Symbol(TypeBox.Kind): "Number",
         },
         "type": {
           "const": "RandomInt",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
@@ -576,6 +713,7 @@ exports[`Pact > v3 > can be serialised 1`] = `
         "max",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "genRandomString": {
       "$id": "#/definitions/genRandomString",
@@ -583,10 +721,12 @@ exports[`Pact > v3 > can be serialised 1`] = `
       "properties": {
         "size": {
           "type": "number",
+          Symbol(TypeBox.Kind): "Number",
         },
         "type": {
           "const": "RandomString",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
@@ -594,6 +734,7 @@ exports[`Pact > v3 > can be serialised 1`] = `
         "size",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "genRegex": {
       "$id": "#/definitions/genRegex",
@@ -601,10 +742,12 @@ exports[`Pact > v3 > can be serialised 1`] = `
       "properties": {
         "regex": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
         },
         "type": {
           "const": "Regex",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
@@ -612,6 +755,7 @@ exports[`Pact > v3 > can be serialised 1`] = `
         "regex",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "genTime": {
       "$id": "#/definitions/genTime",
@@ -619,16 +763,20 @@ exports[`Pact > v3 > can be serialised 1`] = `
       "properties": {
         "format": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "type": {
           "const": "Time",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
         "type",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "genUuid": {
       "$id": "#/definitions/genUuid",
@@ -637,47 +785,60 @@ exports[`Pact > v3 > can be serialised 1`] = `
         "type": {
           "const": "Uuid",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
         "type",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "generator": {
       "$id": "#/definitions/generator",
       "oneOf": [
         {
           "$ref": "#/definitions/genDate",
+          Symbol(TypeBox.Kind): "Ref",
         },
         {
           "$ref": "#/definitions/genDateTime",
+          Symbol(TypeBox.Kind): "Ref",
         },
         {
           "$ref": "#/definitions/genRandomBoolean",
+          Symbol(TypeBox.Kind): "Ref",
         },
         {
           "$ref": "#/definitions/genRandomDecimal",
+          Symbol(TypeBox.Kind): "Ref",
         },
         {
           "$ref": "#/definitions/genRandomHexadecimal",
+          Symbol(TypeBox.Kind): "Ref",
         },
         {
           "$ref": "#/definitions/genRandomInt",
+          Symbol(TypeBox.Kind): "Ref",
         },
         {
           "$ref": "#/definitions/genRandomString",
+          Symbol(TypeBox.Kind): "Ref",
         },
         {
           "$ref": "#/definitions/genRegex",
+          Symbol(TypeBox.Kind): "Ref",
         },
         {
           "$ref": "#/definitions/genTime",
+          Symbol(TypeBox.Kind): "Ref",
         },
         {
           "$ref": "#/definitions/genUuid",
+          Symbol(TypeBox.Kind): "Ref",
         },
       ],
+      Symbol(TypeBox.Kind): "Unsafe",
     },
     "headers": {
       "$id": "#/definitions/headers",
@@ -686,22 +847,28 @@ exports[`Pact > v3 > can be serialised 1`] = `
           "patternProperties": {
             "^(.*)$": {
               "type": "string",
+              Symbol(TypeBox.Kind): "String",
             },
           },
           "type": "object",
+          Symbol(TypeBox.Kind): "Record",
         },
         {
           "patternProperties": {
             "^(.*)$": {
               "items": {
                 "type": "string",
+                Symbol(TypeBox.Kind): "String",
               },
               "type": "array",
+              Symbol(TypeBox.Kind): "Array",
             },
           },
           "type": "object",
+          Symbol(TypeBox.Kind): "Record",
         },
       ],
+      Symbol(TypeBox.Kind): "Union",
     },
     "interaction": {
       "$id": "#/definitions/interaction",
@@ -709,39 +876,52 @@ exports[`Pact > v3 > can be serialised 1`] = `
       "properties": {
         "description": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
         },
         "providerStates": {
           "anyOf": [
             {
               "type": "string",
+              Symbol(TypeBox.Kind): "String",
             },
             {
               "items": {
                 "properties": {
                   "name": {
                     "type": "string",
+                    Symbol(TypeBox.Kind): "String",
                   },
                   "params": {
                     "patternProperties": {
-                      "^(.*)$": {},
+                      "^(.*)$": {
+                        Symbol(TypeBox.Kind): "Unknown",
+                      },
                     },
                     "type": "object",
+                    Symbol(TypeBox.Kind): "Record",
+                    Symbol(TypeBox.Optional): "Optional",
                   },
                 },
                 "required": [
                   "name",
                 ],
                 "type": "object",
+                Symbol(TypeBox.Kind): "Object",
               },
               "type": "array",
+              Symbol(TypeBox.Kind): "Array",
             },
           ],
+          Symbol(TypeBox.Kind): "Union",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "request": {
           "$ref": "#/definitions/request",
+          Symbol(TypeBox.Kind): "Ref",
         },
         "response": {
           "$ref": "#/definitions/response",
+          Symbol(TypeBox.Kind): "Ref",
         },
       },
       "required": [
@@ -750,13 +930,16 @@ exports[`Pact > v3 > can be serialised 1`] = `
         "response",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "interactions": {
       "$id": "#/definitions/interactions",
       "items": {
         "$ref": "#/definitions/interaction",
+        Symbol(TypeBox.Kind): "Ref",
       },
       "type": "array",
+      Symbol(TypeBox.Kind): "Array",
     },
     "matchBoolean": {
       "$id": "#/definitions/matchBoolean",
@@ -765,12 +948,14 @@ exports[`Pact > v3 > can be serialised 1`] = `
         "match": {
           "const": "boolean",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
         "match",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "matchContentType": {
       "$id": "#/definitions/matchContentType",
@@ -779,9 +964,11 @@ exports[`Pact > v3 > can be serialised 1`] = `
         "match": {
           "const": "contentType",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
         "value": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
         },
       },
       "required": [
@@ -789,6 +976,7 @@ exports[`Pact > v3 > can be serialised 1`] = `
         "value",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "matchDate": {
       "$id": "#/definitions/matchDate",
@@ -796,10 +984,12 @@ exports[`Pact > v3 > can be serialised 1`] = `
       "properties": {
         "format": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
         },
         "match": {
           "const": "date",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
@@ -807,6 +997,7 @@ exports[`Pact > v3 > can be serialised 1`] = `
         "format",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "matchDatetime": {
       "$id": "#/definitions/matchDatetime",
@@ -814,10 +1005,12 @@ exports[`Pact > v3 > can be serialised 1`] = `
       "properties": {
         "format": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
         },
         "match": {
           "const": "datetime",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
@@ -825,6 +1018,7 @@ exports[`Pact > v3 > can be serialised 1`] = `
         "format",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "matchDecimal": {
       "$id": "#/definitions/matchDecimal",
@@ -833,12 +1027,14 @@ exports[`Pact > v3 > can be serialised 1`] = `
         "match": {
           "const": "decimal",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
         "match",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "matchEquality": {
       "$id": "#/definitions/matchEquality",
@@ -847,12 +1043,14 @@ exports[`Pact > v3 > can be serialised 1`] = `
         "match": {
           "const": "equality",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
         "match",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "matchInclude": {
       "$id": "#/definitions/matchInclude",
@@ -861,9 +1059,11 @@ exports[`Pact > v3 > can be serialised 1`] = `
         "match": {
           "const": "include",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
         "value": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
         },
       },
       "required": [
@@ -871,6 +1071,7 @@ exports[`Pact > v3 > can be serialised 1`] = `
         "value",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "matchInteger": {
       "$id": "#/definitions/matchInteger",
@@ -879,12 +1080,14 @@ exports[`Pact > v3 > can be serialised 1`] = `
         "match": {
           "const": "integer",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
         "match",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "matchNull": {
       "$id": "#/definitions/matchNull",
@@ -893,12 +1096,14 @@ exports[`Pact > v3 > can be serialised 1`] = `
         "match": {
           "const": "null",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
         "match",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "matchNumber": {
       "$id": "#/definitions/matchNumber",
@@ -907,12 +1112,14 @@ exports[`Pact > v3 > can be serialised 1`] = `
         "match": {
           "const": "number",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
         "match",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "matchRegex": {
       "$id": "#/definitions/matchRegex",
@@ -921,9 +1128,11 @@ exports[`Pact > v3 > can be serialised 1`] = `
         "match": {
           "const": "regex",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
         "regex": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
         },
       },
       "required": [
@@ -931,6 +1140,7 @@ exports[`Pact > v3 > can be serialised 1`] = `
         "regex",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "matchTime": {
       "$id": "#/definitions/matchTime",
@@ -938,10 +1148,12 @@ exports[`Pact > v3 > can be serialised 1`] = `
       "properties": {
         "format": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
         },
         "match": {
           "const": "time",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
@@ -949,6 +1161,7 @@ exports[`Pact > v3 > can be serialised 1`] = `
         "format",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "matchType": {
       "$id": "#/definitions/matchType",
@@ -957,18 +1170,24 @@ exports[`Pact > v3 > can be serialised 1`] = `
         "match": {
           "const": "type",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
         "max": {
           "type": "number",
+          Symbol(TypeBox.Kind): "Number",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "min": {
           "type": "number",
+          Symbol(TypeBox.Kind): "Number",
+          Symbol(TypeBox.Optional): "Optional",
         },
       },
       "required": [
         "match",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "matchValues": {
       "$id": "#/definitions/matchValues",
@@ -977,12 +1196,14 @@ exports[`Pact > v3 > can be serialised 1`] = `
         "match": {
           "const": "values",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
         "match",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "matchers": {
       "$id": "#/definitions/matchers",
@@ -993,67 +1214,88 @@ exports[`Pact > v3 > can be serialised 1`] = `
             {
               "const": "AND",
               "type": "string",
+              Symbol(TypeBox.Kind): "Literal",
             },
             {
               "const": "OR",
               "type": "string",
+              Symbol(TypeBox.Kind): "Literal",
             },
           ],
+          Symbol(TypeBox.Kind): "Union",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "matchers": {
           "items": {
             "anyOf": [
               {
                 "$ref": "#/definitions/matchRegex",
+                Symbol(TypeBox.Kind): "Ref",
               },
               {
                 "$ref": "#/definitions/matchType",
+                Symbol(TypeBox.Kind): "Ref",
               },
               {
                 "$ref": "#/definitions/matchBoolean",
+                Symbol(TypeBox.Kind): "Ref",
               },
               {
                 "$ref": "#/definitions/matchContentType",
+                Symbol(TypeBox.Kind): "Ref",
               },
               {
                 "$ref": "#/definitions/matchDate",
+                Symbol(TypeBox.Kind): "Ref",
               },
               {
                 "$ref": "#/definitions/matchDatetime",
+                Symbol(TypeBox.Kind): "Ref",
               },
               {
                 "$ref": "#/definitions/matchDecimal",
+                Symbol(TypeBox.Kind): "Ref",
               },
               {
                 "$ref": "#/definitions/matchEquality",
+                Symbol(TypeBox.Kind): "Ref",
               },
               {
                 "$ref": "#/definitions/matchInclude",
+                Symbol(TypeBox.Kind): "Ref",
               },
               {
                 "$ref": "#/definitions/matchInteger",
+                Symbol(TypeBox.Kind): "Ref",
               },
               {
                 "$ref": "#/definitions/matchNull",
+                Symbol(TypeBox.Kind): "Ref",
               },
               {
                 "$ref": "#/definitions/matchNumber",
+                Symbol(TypeBox.Kind): "Ref",
               },
               {
                 "$ref": "#/definitions/matchTime",
+                Symbol(TypeBox.Kind): "Ref",
               },
               {
                 "$ref": "#/definitions/matchValues",
+                Symbol(TypeBox.Kind): "Ref",
               },
             ],
+            Symbol(TypeBox.Kind): "Union",
           },
           "type": "array",
+          Symbol(TypeBox.Kind): "Array",
         },
       },
       "required": [
         "matchers",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "matchingRules": {
       "$id": "#/definitions/matchingRules",
@@ -1061,65 +1303,96 @@ exports[`Pact > v3 > can be serialised 1`] = `
       "properties": {
         "body": {
           "$ref": "#/definitions/bodyMatcher",
+          Symbol(TypeBox.Kind): "Ref",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "header": {
           "$ref": "#/definitions/recordMatcher",
+          Symbol(TypeBox.Kind): "Ref",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "path": {
           "$ref": "#/definitions/matchers",
+          Symbol(TypeBox.Kind): "Ref",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "query": {
           "$ref": "#/definitions/recordMatcher",
+          Symbol(TypeBox.Kind): "Ref",
+          Symbol(TypeBox.Optional): "Optional",
         },
       },
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "message": {
       "$id": "#/definitions/message",
       "additionalProperties": false,
       "properties": {
-        "contents": {},
+        "contents": {
+          Symbol(TypeBox.Kind): "Unknown",
+        },
         "description": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
         },
         "generators": {
           "additionalProperties": false,
           "properties": {
             "body": {
               "$ref": "#/definitions/bodyGenerator",
+              Symbol(TypeBox.Kind): "Ref",
+              Symbol(TypeBox.Optional): "Optional",
             },
             "metadata": {
               "$ref": "#/definitions/recordGenerator",
+              Symbol(TypeBox.Kind): "Ref",
+              Symbol(TypeBox.Optional): "Optional",
             },
           },
           "type": "object",
+          Symbol(TypeBox.Kind): "Object",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "matchingRules": {
           "additionalProperties": false,
           "properties": {
             "body": {
               "$ref": "#/definitions/bodyMatcher",
+              Symbol(TypeBox.Kind): "Ref",
             },
           },
           "required": [
             "body",
           ],
           "type": "object",
+          Symbol(TypeBox.Kind): "Object",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "metaData": {
           "patternProperties": {
-            "^(.*)$": {},
+            "^(.*)$": {
+              Symbol(TypeBox.Kind): "Unknown",
+            },
           },
           "type": "object",
+          Symbol(TypeBox.Kind): "Record",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "metadata": {
           "patternProperties": {
-            "^(.*)$": {},
+            "^(.*)$": {
+              Symbol(TypeBox.Kind): "Unknown",
+            },
           },
           "type": "object",
+          Symbol(TypeBox.Kind): "Record",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "providerState": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
+          Symbol(TypeBox.Optional): "Optional",
         },
       },
       "required": [
@@ -1127,13 +1400,16 @@ exports[`Pact > v3 > can be serialised 1`] = `
         "description",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "messages": {
       "$id": "#/definitions/messages",
       "items": {
         "$ref": "#/definitions/message",
+        Symbol(TypeBox.Kind): "Ref",
       },
       "type": "array",
+      Symbol(TypeBox.Kind): "Array",
     },
     "metadata": {
       "$id": "#/definitions/metadata",
@@ -1143,42 +1419,53 @@ exports[`Pact > v3 > can be serialised 1`] = `
           "properties": {
             "version": {
               "type": "string",
+              Symbol(TypeBox.Kind): "String",
             },
           },
           "required": [
             "version",
           ],
           "type": "object",
+          Symbol(TypeBox.Kind): "Object",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "pactSpecification": {
           "additionalProperties": false,
           "properties": {
             "version": {
               "type": "string",
+              Symbol(TypeBox.Kind): "String",
             },
           },
           "required": [
             "version",
           ],
           "type": "object",
+          Symbol(TypeBox.Kind): "Object",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "pactSpecificationVersion": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
+          Symbol(TypeBox.Optional): "Optional",
         },
       },
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "pacticipant": {
       "$id": "#/definitions/pacticipant",
       "properties": {
         "name": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
         },
       },
       "required": [
         "name",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "recordGenerator": {
       "$id": "#/definitions/recordGenerator",
@@ -1186,46 +1473,67 @@ exports[`Pact > v3 > can be serialised 1`] = `
       "patternProperties": {
         "^(.*)$": {
           "$ref": "#/definitions/generator",
+          Symbol(TypeBox.Kind): "Ref",
         },
       },
       "type": "object",
+      Symbol(TypeBox.Kind): "Record",
     },
     "recordMatcher": {
       "$id": "#/definitions/recordMatcher",
       "patternProperties": {
         "^(.*)$": {
           "$ref": "#/definitions/matchers",
+          Symbol(TypeBox.Kind): "Ref",
         },
       },
       "type": "object",
+      Symbol(TypeBox.Kind): "Record",
     },
     "request": {
       "$id": "#/definitions/request",
       "additionalProperties": false,
       "properties": {
-        "body": {},
+        "body": {
+          Symbol(TypeBox.Kind): "Unknown",
+          Symbol(TypeBox.Optional): "Optional",
+        },
         "generators": {
           "properties": {
             "body": {
               "$ref": "#/definitions/bodyGenerator",
+              Symbol(TypeBox.Kind): "Ref",
+              Symbol(TypeBox.Optional): "Optional",
             },
             "headers": {
               "$ref": "#/definitions/recordGenerator",
+              Symbol(TypeBox.Kind): "Ref",
+              Symbol(TypeBox.Optional): "Optional",
             },
             "path": {
               "$ref": "#/definitions/recordGenerator",
+              Symbol(TypeBox.Kind): "Ref",
+              Symbol(TypeBox.Optional): "Optional",
             },
             "query": {
               "$ref": "#/definitions/generator",
+              Symbol(TypeBox.Kind): "Ref",
+              Symbol(TypeBox.Optional): "Optional",
             },
           },
           "type": "object",
+          Symbol(TypeBox.Kind): "Object",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "headers": {
           "$ref": "#/definitions/headers",
+          Symbol(TypeBox.Kind): "Ref",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "matchingRules": {
           "$ref": "#/definitions/matchingRules",
+          Symbol(TypeBox.Kind): "Ref",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "method": {
           "enum": [
@@ -1247,9 +1555,11 @@ exports[`Pact > v3 > can be serialised 1`] = `
             "TRACE",
           ],
           "type": "string",
+          Symbol(TypeBox.Kind): "Unsafe",
         },
         "path": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
         },
         "query": {
           "anyOf": [
@@ -1257,22 +1567,29 @@ exports[`Pact > v3 > can be serialised 1`] = `
               "patternProperties": {
                 "^(.*)$": {
                   "type": "string",
+                  Symbol(TypeBox.Kind): "String",
                 },
               },
               "type": "object",
+              Symbol(TypeBox.Kind): "Record",
             },
             {
               "patternProperties": {
                 "^(.*)$": {
                   "items": {
                     "type": "string",
+                    Symbol(TypeBox.Kind): "String",
                   },
                   "type": "array",
+                  Symbol(TypeBox.Kind): "Array",
                 },
               },
               "type": "object",
+              Symbol(TypeBox.Kind): "Record",
             },
           ],
+          Symbol(TypeBox.Kind): "Union",
+          Symbol(TypeBox.Optional): "Optional",
         },
       },
       "required": [
@@ -1280,60 +1597,86 @@ exports[`Pact > v3 > can be serialised 1`] = `
         "path",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "response": {
       "$id": "#/definitions/response",
       "additionalProperties": false,
       "properties": {
-        "body": {},
+        "body": {
+          Symbol(TypeBox.Kind): "Unknown",
+          Symbol(TypeBox.Optional): "Optional",
+        },
         "generators": {
           "properties": {
             "body": {
               "$ref": "#/definitions/bodyGenerator",
+              Symbol(TypeBox.Kind): "Ref",
+              Symbol(TypeBox.Optional): "Optional",
             },
             "headers": {
               "$ref": "#/definitions/recordGenerator",
+              Symbol(TypeBox.Kind): "Ref",
+              Symbol(TypeBox.Optional): "Optional",
             },
             "status": {
               "$ref": "#/definitions/generator",
+              Symbol(TypeBox.Kind): "Ref",
+              Symbol(TypeBox.Optional): "Optional",
             },
           },
           "type": "object",
+          Symbol(TypeBox.Kind): "Object",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "headers": {
           "$ref": "#/definitions/headers",
+          Symbol(TypeBox.Kind): "Ref",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "matchingRules": {
           "$ref": "#/definitions/matchingRules",
+          Symbol(TypeBox.Kind): "Ref",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "status": {
           "maximum": 599,
           "minimum": 100,
           "type": "integer",
+          Symbol(TypeBox.Kind): "Integer",
         },
       },
       "required": [
         "status",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
   },
   "description": "Schema for a Pact file",
   "properties": {
     "consumer": {
       "$ref": "#/definitions/pacticipant",
+      Symbol(TypeBox.Kind): "Ref",
     },
     "interactions": {
       "$ref": "#/definitions/interactions",
+      Symbol(TypeBox.Kind): "Ref",
+      Symbol(TypeBox.Optional): "Optional",
     },
     "messages": {
       "$ref": "#/definitions/messages",
+      Symbol(TypeBox.Kind): "Ref",
+      Symbol(TypeBox.Optional): "Optional",
     },
     "metadata": {
       "$ref": "#/definitions/metadata",
+      Symbol(TypeBox.Kind): "Ref",
+      Symbol(TypeBox.Optional): "Optional",
     },
     "provider": {
       "$ref": "#/definitions/pacticipant",
+      Symbol(TypeBox.Kind): "Ref",
     },
   },
   "required": [
@@ -1342,6 +1685,7 @@ exports[`Pact > v3 > can be serialised 1`] = `
   ],
   "title": "Pact V3",
   "type": "object",
+  Symbol(TypeBox.Kind): "Object",
 }
 `;
 
@@ -1357,34 +1701,45 @@ exports[`Pact > v4 > can be serialised 1`] = `
           "anyOf": [
             {
               "type": "string",
+              Symbol(TypeBox.Kind): "String",
             },
-            {},
+            {
+              Symbol(TypeBox.Kind): "Unknown",
+            },
           ],
+          Symbol(TypeBox.Kind): "Union",
         },
         "contentType": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
         },
         "contentTypeHint": {
           "anyOf": [
             {
               "const": "BINARY",
               "type": "string",
+              Symbol(TypeBox.Kind): "Literal",
             },
             {
               "const": "TEXT",
               "type": "string",
+              Symbol(TypeBox.Kind): "Literal",
             },
           ],
+          Symbol(TypeBox.Kind): "Union",
         },
         "encoded": {
           "anyOf": [
             {
               "type": "boolean",
+              Symbol(TypeBox.Kind): "Boolean",
             },
             {
               "type": "string",
+              Symbol(TypeBox.Kind): "String",
             },
           ],
+          Symbol(TypeBox.Kind): "Union",
         },
       },
       "required": [
@@ -1394,25 +1749,30 @@ exports[`Pact > v4 > can be serialised 1`] = `
         "encoded",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "bodyGenerator": {
       "$id": "#/definitions/bodyGenerator",
       "additionalProperties": false,
       "patternProperties": {
-        "^\\\\$.*$": {
+        "^\\$.*$": {
           "$ref": "#/definitions/generator",
+          Symbol(TypeBox.Kind): "Ref",
         },
       },
       "type": "object",
+      Symbol(TypeBox.Kind): "Record",
     },
     "bodyMatcher": {
       "$id": "#/definitions/bodyMatcher",
       "patternProperties": {
-        "^\\\\$.*$": {
+        "^\\$.*$": {
           "$ref": "#/definitions/matchers",
+          Symbol(TypeBox.Kind): "Ref",
         },
       },
       "type": "object",
+      Symbol(TypeBox.Kind): "Record",
     },
     "genDate": {
       "$id": "#/definitions/genDate",
@@ -1420,16 +1780,20 @@ exports[`Pact > v4 > can be serialised 1`] = `
       "properties": {
         "format": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "type": {
           "const": "Date",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
         "type",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "genDateTime": {
       "$id": "#/definitions/genDateTime",
@@ -1437,16 +1801,20 @@ exports[`Pact > v4 > can be serialised 1`] = `
       "properties": {
         "format": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "type": {
           "const": "DateTime",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
         "type",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "genMockServerURL": {
       "$id": "#/definitions/genMockServerURL",
@@ -1454,13 +1822,16 @@ exports[`Pact > v4 > can be serialised 1`] = `
       "properties": {
         "example": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
         },
         "regex": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
         },
         "type": {
           "const": "MockServerURL",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
@@ -1469,6 +1840,7 @@ exports[`Pact > v4 > can be serialised 1`] = `
         "example",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "genProviderState": {
       "$id": "#/definitions/genProviderState",
@@ -1476,10 +1848,12 @@ exports[`Pact > v4 > can be serialised 1`] = `
       "properties": {
         "expression": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
         },
         "type": {
           "const": "ProviderState",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
@@ -1487,6 +1861,7 @@ exports[`Pact > v4 > can be serialised 1`] = `
         "expression",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "genRandomBoolean": {
       "$id": "#/definitions/genRandomBoolean",
@@ -1495,12 +1870,14 @@ exports[`Pact > v4 > can be serialised 1`] = `
         "type": {
           "const": "RandomBoolean",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
         "type",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "genRandomDecimal": {
       "$id": "#/definitions/genRandomDecimal",
@@ -1508,10 +1885,12 @@ exports[`Pact > v4 > can be serialised 1`] = `
       "properties": {
         "digits": {
           "type": "number",
+          Symbol(TypeBox.Kind): "Number",
         },
         "type": {
           "const": "RandomDecimal",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
@@ -1519,6 +1898,7 @@ exports[`Pact > v4 > can be serialised 1`] = `
         "digits",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "genRandomHexadecimal": {
       "$id": "#/definitions/genRandomHexadecimal",
@@ -1526,10 +1906,12 @@ exports[`Pact > v4 > can be serialised 1`] = `
       "properties": {
         "digits": {
           "type": "number",
+          Symbol(TypeBox.Kind): "Number",
         },
         "type": {
           "const": "RandomHexadecimal",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
@@ -1537,6 +1919,7 @@ exports[`Pact > v4 > can be serialised 1`] = `
         "digits",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "genRandomInt": {
       "$id": "#/definitions/genRandomInt",
@@ -1544,13 +1927,16 @@ exports[`Pact > v4 > can be serialised 1`] = `
       "properties": {
         "max": {
           "type": "number",
+          Symbol(TypeBox.Kind): "Number",
         },
         "min": {
           "type": "number",
+          Symbol(TypeBox.Kind): "Number",
         },
         "type": {
           "const": "RandomInt",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
@@ -1559,6 +1945,7 @@ exports[`Pact > v4 > can be serialised 1`] = `
         "max",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "genRandomString": {
       "$id": "#/definitions/genRandomString",
@@ -1566,10 +1953,12 @@ exports[`Pact > v4 > can be serialised 1`] = `
       "properties": {
         "size": {
           "type": "number",
+          Symbol(TypeBox.Kind): "Number",
         },
         "type": {
           "const": "RandomString",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
@@ -1577,6 +1966,7 @@ exports[`Pact > v4 > can be serialised 1`] = `
         "size",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "genRegex": {
       "$id": "#/definitions/genRegex",
@@ -1584,10 +1974,12 @@ exports[`Pact > v4 > can be serialised 1`] = `
       "properties": {
         "regex": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
         },
         "type": {
           "const": "Regex",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
@@ -1595,6 +1987,7 @@ exports[`Pact > v4 > can be serialised 1`] = `
         "regex",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "genTime": {
       "$id": "#/definitions/genTime",
@@ -1602,16 +1995,20 @@ exports[`Pact > v4 > can be serialised 1`] = `
       "properties": {
         "format": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "type": {
           "const": "Time",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
         "type",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "genUuid": {
       "$id": "#/definitions/genUuid",
@@ -1620,12 +2017,14 @@ exports[`Pact > v4 > can be serialised 1`] = `
         "type": {
           "const": "Uuid",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
         "type",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "genUuidFormat": {
       "$id": "#/definitions/genUuidFormat",
@@ -1636,24 +2035,30 @@ exports[`Pact > v4 > can be serialised 1`] = `
             {
               "const": "simple",
               "type": "string",
+              Symbol(TypeBox.Kind): "Literal",
             },
             {
               "const": "lower-case-hyphenated",
               "type": "string",
+              Symbol(TypeBox.Kind): "Literal",
             },
             {
               "const": "upper-case-hyphenated",
               "type": "string",
+              Symbol(TypeBox.Kind): "Literal",
             },
             {
               "const": "URN",
               "type": "string",
+              Symbol(TypeBox.Kind): "Literal",
             },
           ],
+          Symbol(TypeBox.Kind): "Union",
         },
         "type": {
           "const": "Uuid",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
@@ -1661,50 +2066,65 @@ exports[`Pact > v4 > can be serialised 1`] = `
         "format",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "generator": {
       "$id": "#/definitions/generator",
       "oneOf": [
         {
           "$ref": "#/definitions/genDate",
+          Symbol(TypeBox.Kind): "Ref",
         },
         {
           "$ref": "#/definitions/genDateTime",
+          Symbol(TypeBox.Kind): "Ref",
         },
         {
           "$ref": "#/definitions/genRandomBoolean",
+          Symbol(TypeBox.Kind): "Ref",
         },
         {
           "$ref": "#/definitions/genRandomDecimal",
+          Symbol(TypeBox.Kind): "Ref",
         },
         {
           "$ref": "#/definitions/genRandomHexadecimal",
+          Symbol(TypeBox.Kind): "Ref",
         },
         {
           "$ref": "#/definitions/genRandomInt",
+          Symbol(TypeBox.Kind): "Ref",
         },
         {
           "$ref": "#/definitions/genRandomString",
+          Symbol(TypeBox.Kind): "Ref",
         },
         {
           "$ref": "#/definitions/genRegex",
+          Symbol(TypeBox.Kind): "Ref",
         },
         {
           "$ref": "#/definitions/genTime",
+          Symbol(TypeBox.Kind): "Ref",
         },
         {
           "$ref": "#/definitions/genUuid",
+          Symbol(TypeBox.Kind): "Ref",
         },
         {
           "$ref": "#/definitions/genMockServerURL",
+          Symbol(TypeBox.Kind): "Ref",
         },
         {
           "$ref": "#/definitions/genProviderState",
+          Symbol(TypeBox.Kind): "Ref",
         },
         {
           "$ref": "#/definitions/genUuidFormat",
+          Symbol(TypeBox.Kind): "Ref",
         },
       ],
+      Symbol(TypeBox.Kind): "Unsafe",
     },
     "headers": {
       "$id": "#/definitions/headers",
@@ -1713,22 +2133,28 @@ exports[`Pact > v4 > can be serialised 1`] = `
           "patternProperties": {
             "^(.*)$": {
               "type": "string",
+              Symbol(TypeBox.Kind): "String",
             },
           },
           "type": "object",
+          Symbol(TypeBox.Kind): "Record",
         },
         {
           "patternProperties": {
             "^(.*)$": {
               "items": {
                 "type": "string",
+                Symbol(TypeBox.Kind): "String",
               },
               "type": "array",
+              Symbol(TypeBox.Kind): "Array",
             },
           },
           "type": "object",
+          Symbol(TypeBox.Kind): "Record",
         },
       ],
+      Symbol(TypeBox.Kind): "Union",
     },
     "interaction": {
       "$id": "#/definitions/interaction",
@@ -1740,36 +2166,48 @@ exports[`Pact > v4 > can be serialised 1`] = `
               "properties": {
                 "testname": {
                   "type": "string",
+                  Symbol(TypeBox.Kind): "String",
+                  Symbol(TypeBox.Optional): "Optional",
                 },
                 "text": {
                   "items": {
                     "type": "string",
+                    Symbol(TypeBox.Kind): "String",
                   },
                   "type": "array",
+                  Symbol(TypeBox.Kind): "Array",
+                  Symbol(TypeBox.Optional): "Optional",
                 },
               },
               "type": "object",
+              Symbol(TypeBox.Kind): "Object",
+              Symbol(TypeBox.Optional): "Optional",
             },
             "description": {
               "type": "string",
+              Symbol(TypeBox.Kind): "String",
             },
             "interactionMarkup": {
               "additionalProperties": false,
               "properties": {
                 "markup": {
                   "type": "string",
+                  Symbol(TypeBox.Kind): "String",
                 },
                 "markupType": {
                   "anyOf": [
                     {
                       "const": "COMMON_MARK",
                       "type": "string",
+                      Symbol(TypeBox.Kind): "Literal",
                     },
                     {
                       "const": "HTML",
                       "type": "string",
+                      Symbol(TypeBox.Kind): "Literal",
                     },
                   ],
+                  Symbol(TypeBox.Kind): "Union",
                 },
               },
               "required": [
@@ -1777,60 +2215,84 @@ exports[`Pact > v4 > can be serialised 1`] = `
                 "markupType",
               ],
               "type": "object",
+              Symbol(TypeBox.Kind): "Object",
+              Symbol(TypeBox.Optional): "Optional",
             },
             "key": {
               "type": "string",
+              Symbol(TypeBox.Kind): "String",
+              Symbol(TypeBox.Optional): "Optional",
             },
             "pending": {
               "type": "boolean",
+              Symbol(TypeBox.Kind): "Boolean",
+              Symbol(TypeBox.Optional): "Optional",
             },
             "pluginConfiguration": {
               "patternProperties": {
                 "^(.*)$": {
                   "patternProperties": {
-                    "^(.*)$": {},
+                    "^(.*)$": {
+                      Symbol(TypeBox.Kind): "Unknown",
+                    },
                   },
                   "type": "object",
+                  Symbol(TypeBox.Kind): "Record",
                 },
               },
               "type": "object",
+              Symbol(TypeBox.Kind): "Record",
+              Symbol(TypeBox.Optional): "Optional",
             },
             "providerStates": {
               "anyOf": [
                 {
                   "type": "string",
+                  Symbol(TypeBox.Kind): "String",
                 },
                 {
                   "items": {
                     "properties": {
                       "name": {
                         "type": "string",
+                        Symbol(TypeBox.Kind): "String",
                       },
                       "params": {
                         "patternProperties": {
-                          "^(.*)$": {},
+                          "^(.*)$": {
+                            Symbol(TypeBox.Kind): "Unknown",
+                          },
                         },
                         "type": "object",
+                        Symbol(TypeBox.Kind): "Record",
+                        Symbol(TypeBox.Optional): "Optional",
                       },
                     },
                     "required": [
                       "name",
                     ],
                     "type": "object",
+                    Symbol(TypeBox.Kind): "Object",
                   },
                   "type": "array",
+                  Symbol(TypeBox.Kind): "Array",
                 },
               ],
+              Symbol(TypeBox.Kind): "Union",
+              Symbol(TypeBox.Optional): "Optional",
             },
             "request": {
               "$ref": "#/definitions/request",
+              Symbol(TypeBox.Kind): "Ref",
             },
             "response": {
               "$ref": "#/definitions/response",
+              Symbol(TypeBox.Kind): "Ref",
             },
             "type": {
               "const": "Synchronous/HTTP",
               "type": "string",
+              Symbol(TypeBox.Kind): "Literal",
             },
           },
           "required": [
@@ -1840,6 +2302,7 @@ exports[`Pact > v4 > can be serialised 1`] = `
             "type",
           ],
           "type": "object",
+          Symbol(TypeBox.Kind): "Object",
         },
         {
           "additionalProperties": false,
@@ -1848,49 +2311,69 @@ exports[`Pact > v4 > can be serialised 1`] = `
               "properties": {
                 "testname": {
                   "type": "string",
+                  Symbol(TypeBox.Kind): "String",
+                  Symbol(TypeBox.Optional): "Optional",
                 },
                 "text": {
                   "items": {
                     "type": "string",
+                    Symbol(TypeBox.Kind): "String",
                   },
                   "type": "array",
+                  Symbol(TypeBox.Kind): "Array",
+                  Symbol(TypeBox.Optional): "Optional",
                 },
               },
               "type": "object",
+              Symbol(TypeBox.Kind): "Object",
+              Symbol(TypeBox.Optional): "Optional",
             },
-            "contents": {},
+            "contents": {
+              Symbol(TypeBox.Kind): "Unknown",
+            },
             "description": {
               "type": "string",
+              Symbol(TypeBox.Kind): "String",
             },
             "generators": {
               "additionalProperties": false,
               "properties": {
                 "body": {
                   "$ref": "#/definitions/bodyGenerator",
+                  Symbol(TypeBox.Kind): "Ref",
+                  Symbol(TypeBox.Optional): "Optional",
                 },
                 "metadata": {
                   "$ref": "#/definitions/recordGenerator",
+                  Symbol(TypeBox.Kind): "Ref",
+                  Symbol(TypeBox.Optional): "Optional",
                 },
               },
               "type": "object",
+              Symbol(TypeBox.Kind): "Object",
+              Symbol(TypeBox.Optional): "Optional",
             },
             "interactionMarkup": {
               "additionalProperties": false,
               "properties": {
                 "markup": {
                   "type": "string",
+                  Symbol(TypeBox.Kind): "String",
                 },
                 "markupType": {
                   "anyOf": [
                     {
                       "const": "COMMON_MARK",
                       "type": "string",
+                      Symbol(TypeBox.Kind): "Literal",
                     },
                     {
                       "const": "HTML",
                       "type": "string",
+                      Symbol(TypeBox.Kind): "Literal",
                     },
                   ],
+                  Symbol(TypeBox.Kind): "Union",
                 },
               },
               "required": [
@@ -1898,78 +2381,111 @@ exports[`Pact > v4 > can be serialised 1`] = `
                 "markupType",
               ],
               "type": "object",
+              Symbol(TypeBox.Kind): "Object",
+              Symbol(TypeBox.Optional): "Optional",
             },
             "key": {
               "type": "string",
+              Symbol(TypeBox.Kind): "String",
+              Symbol(TypeBox.Optional): "Optional",
             },
             "matchingRules": {
               "additionalProperties": false,
               "properties": {
                 "body": {
                   "$ref": "#/definitions/bodyMatcher",
+                  Symbol(TypeBox.Kind): "Ref",
                 },
               },
               "required": [
                 "body",
               ],
               "type": "object",
+              Symbol(TypeBox.Kind): "Object",
+              Symbol(TypeBox.Optional): "Optional",
             },
             "metaData": {
               "patternProperties": {
-                "^(.*)$": {},
+                "^(.*)$": {
+                  Symbol(TypeBox.Kind): "Unknown",
+                },
               },
               "type": "object",
+              Symbol(TypeBox.Kind): "Record",
+              Symbol(TypeBox.Optional): "Optional",
             },
             "metadata": {
               "patternProperties": {
-                "^(.*)$": {},
+                "^(.*)$": {
+                  Symbol(TypeBox.Kind): "Unknown",
+                },
               },
               "type": "object",
+              Symbol(TypeBox.Kind): "Record",
+              Symbol(TypeBox.Optional): "Optional",
             },
             "pending": {
               "type": "boolean",
+              Symbol(TypeBox.Kind): "Boolean",
+              Symbol(TypeBox.Optional): "Optional",
             },
             "pluginConfiguration": {
               "patternProperties": {
                 "^(.*)$": {
                   "patternProperties": {
-                    "^(.*)$": {},
+                    "^(.*)$": {
+                      Symbol(TypeBox.Kind): "Unknown",
+                    },
                   },
                   "type": "object",
+                  Symbol(TypeBox.Kind): "Record",
                 },
               },
               "type": "object",
+              Symbol(TypeBox.Kind): "Record",
+              Symbol(TypeBox.Optional): "Optional",
             },
             "providerStates": {
               "anyOf": [
                 {
                   "type": "string",
+                  Symbol(TypeBox.Kind): "String",
                 },
                 {
                   "items": {
                     "properties": {
                       "name": {
                         "type": "string",
+                        Symbol(TypeBox.Kind): "String",
                       },
                       "params": {
                         "patternProperties": {
-                          "^(.*)$": {},
+                          "^(.*)$": {
+                            Symbol(TypeBox.Kind): "Unknown",
+                          },
                         },
                         "type": "object",
+                        Symbol(TypeBox.Kind): "Record",
+                        Symbol(TypeBox.Optional): "Optional",
                       },
                     },
                     "required": [
                       "name",
                     ],
                     "type": "object",
+                    Symbol(TypeBox.Kind): "Object",
                   },
                   "type": "array",
+                  Symbol(TypeBox.Kind): "Array",
                 },
               ],
+              Symbol(TypeBox.Kind): "Union",
+              Symbol(TypeBox.Optional): "Optional",
             },
             "type": {
               "const": "Asynchronous/Messages",
               "type": "string",
+              Symbol(TypeBox.Kind): "Literal",
             },
           },
           "required": [
@@ -1978,6 +2494,7 @@ exports[`Pact > v4 > can be serialised 1`] = `
             "type",
           ],
           "type": "object",
+          Symbol(TypeBox.Kind): "Object",
         },
         {
           "additionalProperties": false,
@@ -1986,36 +2503,48 @@ exports[`Pact > v4 > can be serialised 1`] = `
               "properties": {
                 "testname": {
                   "type": "string",
+                  Symbol(TypeBox.Kind): "String",
+                  Symbol(TypeBox.Optional): "Optional",
                 },
                 "text": {
                   "items": {
                     "type": "string",
+                    Symbol(TypeBox.Kind): "String",
                   },
                   "type": "array",
+                  Symbol(TypeBox.Kind): "Array",
+                  Symbol(TypeBox.Optional): "Optional",
                 },
               },
               "type": "object",
+              Symbol(TypeBox.Kind): "Object",
+              Symbol(TypeBox.Optional): "Optional",
             },
             "description": {
               "type": "string",
+              Symbol(TypeBox.Kind): "String",
             },
             "interactionMarkup": {
               "additionalProperties": false,
               "properties": {
                 "markup": {
                   "type": "string",
+                  Symbol(TypeBox.Kind): "String",
                 },
                 "markupType": {
                   "anyOf": [
                     {
                       "const": "COMMON_MARK",
                       "type": "string",
+                      Symbol(TypeBox.Kind): "Literal",
                     },
                     {
                       "const": "HTML",
                       "type": "string",
+                      Symbol(TypeBox.Kind): "Literal",
                     },
                   ],
+                  Symbol(TypeBox.Kind): "Union",
                 },
               },
               "required": [
@@ -2023,63 +2552,88 @@ exports[`Pact > v4 > can be serialised 1`] = `
                 "markupType",
               ],
               "type": "object",
+              Symbol(TypeBox.Kind): "Object",
+              Symbol(TypeBox.Optional): "Optional",
             },
             "key": {
               "type": "string",
+              Symbol(TypeBox.Kind): "String",
+              Symbol(TypeBox.Optional): "Optional",
             },
             "pending": {
               "type": "boolean",
+              Symbol(TypeBox.Kind): "Boolean",
+              Symbol(TypeBox.Optional): "Optional",
             },
             "pluginConfiguration": {
               "patternProperties": {
                 "^(.*)$": {
                   "patternProperties": {
-                    "^(.*)$": {},
+                    "^(.*)$": {
+                      Symbol(TypeBox.Kind): "Unknown",
+                    },
                   },
                   "type": "object",
+                  Symbol(TypeBox.Kind): "Record",
                 },
               },
               "type": "object",
+              Symbol(TypeBox.Kind): "Record",
+              Symbol(TypeBox.Optional): "Optional",
             },
             "providerStates": {
               "anyOf": [
                 {
                   "type": "string",
+                  Symbol(TypeBox.Kind): "String",
                 },
                 {
                   "items": {
                     "properties": {
                       "name": {
                         "type": "string",
+                        Symbol(TypeBox.Kind): "String",
                       },
                       "params": {
                         "patternProperties": {
-                          "^(.*)$": {},
+                          "^(.*)$": {
+                            Symbol(TypeBox.Kind): "Unknown",
+                          },
                         },
                         "type": "object",
+                        Symbol(TypeBox.Kind): "Record",
+                        Symbol(TypeBox.Optional): "Optional",
                       },
                     },
                     "required": [
                       "name",
                     ],
                     "type": "object",
+                    Symbol(TypeBox.Kind): "Object",
                   },
                   "type": "array",
+                  Symbol(TypeBox.Kind): "Array",
                 },
               ],
+              Symbol(TypeBox.Kind): "Union",
+              Symbol(TypeBox.Optional): "Optional",
             },
             "request": {
               "$ref": "#/definitions/messageContents",
+              Symbol(TypeBox.Kind): "Ref",
             },
             "response": {
               "items": {
                 "$ref": "#/definitions/messageContents",
+                Symbol(TypeBox.Kind): "Ref",
               },
               "type": "array",
+              Symbol(TypeBox.Kind): "Array",
             },
             "type": {
               "const": "Synchronous/Messages",
               "type": "string",
+              Symbol(TypeBox.Kind): "Literal",
             },
           },
           "required": [
@@ -2089,15 +2643,19 @@ exports[`Pact > v4 > can be serialised 1`] = `
             "type",
           ],
           "type": "object",
+          Symbol(TypeBox.Kind): "Object",
         },
       ],
+      Symbol(TypeBox.Kind): "Union",
     },
     "interactions": {
       "$id": "#/definitions/interactions",
       "items": {
         "$ref": "#/definitions/interaction",
+        Symbol(TypeBox.Kind): "Ref",
       },
       "type": "array",
+      Symbol(TypeBox.Kind): "Array",
     },
     "matchArrayContains": {
       "$id": "#/definitions/matchArrayContains",
@@ -2106,10 +2664,14 @@ exports[`Pact > v4 > can be serialised 1`] = `
         "match": {
           "const": "arrayContains",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
         "variants": {
-          "items": {},
+          "items": {
+            Symbol(TypeBox.Kind): "Any",
+          },
           "type": "array",
+          Symbol(TypeBox.Kind): "Array",
         },
       },
       "required": [
@@ -2117,6 +2679,7 @@ exports[`Pact > v4 > can be serialised 1`] = `
         "variants",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "matchBoolean": {
       "$id": "#/definitions/matchBoolean",
@@ -2125,12 +2688,14 @@ exports[`Pact > v4 > can be serialised 1`] = `
         "match": {
           "const": "boolean",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
         "match",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "matchContentType": {
       "$id": "#/definitions/matchContentType",
@@ -2139,9 +2704,11 @@ exports[`Pact > v4 > can be serialised 1`] = `
         "match": {
           "const": "contentType",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
         "value": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
         },
       },
       "required": [
@@ -2149,6 +2716,7 @@ exports[`Pact > v4 > can be serialised 1`] = `
         "value",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "matchDate": {
       "$id": "#/definitions/matchDate",
@@ -2156,10 +2724,12 @@ exports[`Pact > v4 > can be serialised 1`] = `
       "properties": {
         "format": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
         },
         "match": {
           "const": "date",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
@@ -2167,6 +2737,7 @@ exports[`Pact > v4 > can be serialised 1`] = `
         "format",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "matchDatetime": {
       "$id": "#/definitions/matchDatetime",
@@ -2174,10 +2745,12 @@ exports[`Pact > v4 > can be serialised 1`] = `
       "properties": {
         "format": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
         },
         "match": {
           "const": "datetime",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
@@ -2185,6 +2758,7 @@ exports[`Pact > v4 > can be serialised 1`] = `
         "format",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "matchDecimal": {
       "$id": "#/definitions/matchDecimal",
@@ -2193,12 +2767,14 @@ exports[`Pact > v4 > can be serialised 1`] = `
         "match": {
           "const": "decimal",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
         "match",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "matchEachKey": {
       "$id": "#/definitions/matchEachKey",
@@ -2207,14 +2783,19 @@ exports[`Pact > v4 > can be serialised 1`] = `
         "match": {
           "const": "eachKey",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
         "rules": {
-          "items": {},
+          "items": {
+            Symbol(TypeBox.Kind): "Unknown",
+          },
           "type": "array",
+          Symbol(TypeBox.Kind): "Array",
         },
         "value": {
-          "pattern": "^\\\\$.*$",
+          "pattern": "^\\$.*$",
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
         },
       },
       "required": [
@@ -2223,6 +2804,7 @@ exports[`Pact > v4 > can be serialised 1`] = `
         "value",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "matchEachValue": {
       "$id": "#/definitions/matchEachValue",
@@ -2231,14 +2813,19 @@ exports[`Pact > v4 > can be serialised 1`] = `
         "match": {
           "const": "eachValue",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
         "rules": {
-          "items": {},
+          "items": {
+            Symbol(TypeBox.Kind): "Unknown",
+          },
           "type": "array",
+          Symbol(TypeBox.Kind): "Array",
         },
         "value": {
-          "pattern": "^\\\\$.*$",
+          "pattern": "^\\$.*$",
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
         },
       },
       "required": [
@@ -2247,6 +2834,7 @@ exports[`Pact > v4 > can be serialised 1`] = `
         "value",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "matchEquality": {
       "$id": "#/definitions/matchEquality",
@@ -2255,12 +2843,14 @@ exports[`Pact > v4 > can be serialised 1`] = `
         "match": {
           "const": "equality",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
         "match",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "matchInclude": {
       "$id": "#/definitions/matchInclude",
@@ -2269,9 +2859,11 @@ exports[`Pact > v4 > can be serialised 1`] = `
         "match": {
           "const": "include",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
         "value": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
         },
       },
       "required": [
@@ -2279,6 +2871,7 @@ exports[`Pact > v4 > can be serialised 1`] = `
         "value",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "matchInteger": {
       "$id": "#/definitions/matchInteger",
@@ -2287,12 +2880,14 @@ exports[`Pact > v4 > can be serialised 1`] = `
         "match": {
           "const": "integer",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
         "match",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "matchNotEmpty": {
       "$id": "#/definitions/matchNotEmpty",
@@ -2301,12 +2896,14 @@ exports[`Pact > v4 > can be serialised 1`] = `
         "match": {
           "const": "notEmpty",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
         "match",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "matchNull": {
       "$id": "#/definitions/matchNull",
@@ -2315,12 +2912,14 @@ exports[`Pact > v4 > can be serialised 1`] = `
         "match": {
           "const": "null",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
         "match",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "matchNumber": {
       "$id": "#/definitions/matchNumber",
@@ -2329,12 +2928,14 @@ exports[`Pact > v4 > can be serialised 1`] = `
         "match": {
           "const": "number",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
         "match",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "matchRegex": {
       "$id": "#/definitions/matchRegex",
@@ -2343,9 +2944,11 @@ exports[`Pact > v4 > can be serialised 1`] = `
         "match": {
           "const": "regex",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
         "regex": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
         },
       },
       "required": [
@@ -2353,6 +2956,7 @@ exports[`Pact > v4 > can be serialised 1`] = `
         "regex",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "matchSemver": {
       "$id": "#/definitions/matchSemver",
@@ -2361,12 +2965,14 @@ exports[`Pact > v4 > can be serialised 1`] = `
         "match": {
           "const": "semver",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
         "match",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "matchStatusCode": {
       "$id": "#/definitions/matchStatusCode",
@@ -2375,9 +2981,11 @@ exports[`Pact > v4 > can be serialised 1`] = `
         "match": {
           "const": "statusCode",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
         "status": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
         },
       },
       "required": [
@@ -2385,6 +2993,7 @@ exports[`Pact > v4 > can be serialised 1`] = `
         "status",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "matchTime": {
       "$id": "#/definitions/matchTime",
@@ -2392,10 +3001,12 @@ exports[`Pact > v4 > can be serialised 1`] = `
       "properties": {
         "format": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
         },
         "match": {
           "const": "time",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
@@ -2403,6 +3014,7 @@ exports[`Pact > v4 > can be serialised 1`] = `
         "format",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "matchType": {
       "$id": "#/definitions/matchType",
@@ -2411,18 +3023,24 @@ exports[`Pact > v4 > can be serialised 1`] = `
         "match": {
           "const": "type",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
         "max": {
           "type": "number",
+          Symbol(TypeBox.Kind): "Number",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "min": {
           "type": "number",
+          Symbol(TypeBox.Kind): "Number",
+          Symbol(TypeBox.Optional): "Optional",
         },
       },
       "required": [
         "match",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "matchValues": {
       "$id": "#/definitions/matchValues",
@@ -2431,12 +3049,14 @@ exports[`Pact > v4 > can be serialised 1`] = `
         "match": {
           "const": "values",
           "type": "string",
+          Symbol(TypeBox.Kind): "Literal",
         },
       },
       "required": [
         "match",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "matchers": {
       "$id": "#/definitions/matchers",
@@ -2447,85 +3067,112 @@ exports[`Pact > v4 > can be serialised 1`] = `
             {
               "const": "AND",
               "type": "string",
+              Symbol(TypeBox.Kind): "Literal",
             },
             {
               "const": "OR",
               "type": "string",
+              Symbol(TypeBox.Kind): "Literal",
             },
           ],
+          Symbol(TypeBox.Kind): "Union",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "matchers": {
           "items": {
             "anyOf": [
               {
                 "$ref": "#/definitions/matchRegex",
+                Symbol(TypeBox.Kind): "Ref",
               },
               {
                 "$ref": "#/definitions/matchType",
+                Symbol(TypeBox.Kind): "Ref",
               },
               {
                 "$ref": "#/definitions/matchBoolean",
+                Symbol(TypeBox.Kind): "Ref",
               },
               {
                 "$ref": "#/definitions/matchContentType",
+                Symbol(TypeBox.Kind): "Ref",
               },
               {
                 "$ref": "#/definitions/matchDate",
+                Symbol(TypeBox.Kind): "Ref",
               },
               {
                 "$ref": "#/definitions/matchDatetime",
+                Symbol(TypeBox.Kind): "Ref",
               },
               {
                 "$ref": "#/definitions/matchDecimal",
+                Symbol(TypeBox.Kind): "Ref",
               },
               {
                 "$ref": "#/definitions/matchEquality",
+                Symbol(TypeBox.Kind): "Ref",
               },
               {
                 "$ref": "#/definitions/matchInclude",
+                Symbol(TypeBox.Kind): "Ref",
               },
               {
                 "$ref": "#/definitions/matchInteger",
+                Symbol(TypeBox.Kind): "Ref",
               },
               {
                 "$ref": "#/definitions/matchNull",
+                Symbol(TypeBox.Kind): "Ref",
               },
               {
                 "$ref": "#/definitions/matchNumber",
+                Symbol(TypeBox.Kind): "Ref",
               },
               {
                 "$ref": "#/definitions/matchTime",
+                Symbol(TypeBox.Kind): "Ref",
               },
               {
                 "$ref": "#/definitions/matchValues",
+                Symbol(TypeBox.Kind): "Ref",
               },
               {
                 "$ref": "#/definitions/matchArrayContains",
+                Symbol(TypeBox.Kind): "Ref",
               },
               {
                 "$ref": "#/definitions/matchEachKey",
+                Symbol(TypeBox.Kind): "Ref",
               },
               {
                 "$ref": "#/definitions/matchEachValue",
+                Symbol(TypeBox.Kind): "Ref",
               },
               {
                 "$ref": "#/definitions/matchNotEmpty",
+                Symbol(TypeBox.Kind): "Ref",
               },
               {
                 "$ref": "#/definitions/matchSemver",
+                Symbol(TypeBox.Kind): "Ref",
               },
               {
                 "$ref": "#/definitions/matchStatusCode",
+                Symbol(TypeBox.Kind): "Ref",
               },
             ],
+            Symbol(TypeBox.Kind): "Union",
           },
           "type": "array",
+          Symbol(TypeBox.Kind): "Array",
         },
       },
       "required": [
         "matchers",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "matchingRules": {
       "$id": "#/definitions/matchingRules",
@@ -2533,65 +3180,94 @@ exports[`Pact > v4 > can be serialised 1`] = `
       "properties": {
         "body": {
           "$ref": "#/definitions/bodyMatcher",
+          Symbol(TypeBox.Kind): "Ref",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "header": {
           "$ref": "#/definitions/recordMatcher",
+          Symbol(TypeBox.Kind): "Ref",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "path": {
           "$ref": "#/definitions/matchers",
+          Symbol(TypeBox.Kind): "Ref",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "query": {
           "$ref": "#/definitions/recordMatcher",
+          Symbol(TypeBox.Kind): "Ref",
+          Symbol(TypeBox.Optional): "Optional",
         },
       },
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "messageContents": {
       "$id": "#/definitions/messageContents",
       "additionalProperties": false,
       "properties": {
-        "contents": {},
+        "contents": {
+          Symbol(TypeBox.Kind): "Unknown",
+        },
         "generators": {
           "additionalProperties": false,
           "properties": {
             "body": {
               "$ref": "#/definitions/bodyGenerator",
+              Symbol(TypeBox.Kind): "Ref",
+              Symbol(TypeBox.Optional): "Optional",
             },
             "metadata": {
               "$ref": "#/definitions/recordGenerator",
+              Symbol(TypeBox.Kind): "Ref",
+              Symbol(TypeBox.Optional): "Optional",
             },
           },
           "type": "object",
+          Symbol(TypeBox.Kind): "Object",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "matchingRules": {
           "additionalProperties": false,
           "properties": {
             "body": {
               "$ref": "#/definitions/bodyMatcher",
+              Symbol(TypeBox.Kind): "Ref",
             },
           },
           "required": [
             "body",
           ],
           "type": "object",
+          Symbol(TypeBox.Kind): "Object",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "metaData": {
           "patternProperties": {
-            "^(.*)$": {},
+            "^(.*)$": {
+              Symbol(TypeBox.Kind): "Unknown",
+            },
           },
           "type": "object",
+          Symbol(TypeBox.Kind): "Record",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "metadata": {
           "patternProperties": {
-            "^(.*)$": {},
+            "^(.*)$": {
+              Symbol(TypeBox.Kind): "Unknown",
+            },
           },
           "type": "object",
+          Symbol(TypeBox.Kind): "Record",
+          Symbol(TypeBox.Optional): "Optional",
         },
       },
       "required": [
         "contents",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "metadata": {
       "$id": "#/definitions/metadata",
@@ -2601,27 +3277,33 @@ exports[`Pact > v4 > can be serialised 1`] = `
           "properties": {
             "version": {
               "type": "string",
+              Symbol(TypeBox.Kind): "String",
             },
           },
           "required": [
             "version",
           ],
           "type": "object",
+          Symbol(TypeBox.Kind): "Object",
+          Symbol(TypeBox.Optional): "Optional",
         },
       },
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "pacticipant": {
       "$id": "#/definitions/pacticipant",
       "properties": {
         "name": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
         },
       },
       "required": [
         "name",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "recordGenerator": {
       "$id": "#/definitions/recordGenerator",
@@ -2629,18 +3311,22 @@ exports[`Pact > v4 > can be serialised 1`] = `
       "patternProperties": {
         "^(.*)$": {
           "$ref": "#/definitions/generator",
+          Symbol(TypeBox.Kind): "Ref",
         },
       },
       "type": "object",
+      Symbol(TypeBox.Kind): "Record",
     },
     "recordMatcher": {
       "$id": "#/definitions/recordMatcher",
       "patternProperties": {
         "^(.*)$": {
           "$ref": "#/definitions/matchers",
+          Symbol(TypeBox.Kind): "Ref",
         },
       },
       "type": "object",
+      Symbol(TypeBox.Kind): "Record",
     },
     "request": {
       "$id": "#/definitions/request",
@@ -2648,29 +3334,45 @@ exports[`Pact > v4 > can be serialised 1`] = `
       "properties": {
         "body": {
           "$ref": "#/definitions/body",
+          Symbol(TypeBox.Kind): "Ref",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "generators": {
           "properties": {
             "body": {
               "$ref": "#/definitions/bodyGenerator",
+              Symbol(TypeBox.Kind): "Ref",
+              Symbol(TypeBox.Optional): "Optional",
             },
             "headers": {
               "$ref": "#/definitions/recordGenerator",
+              Symbol(TypeBox.Kind): "Ref",
+              Symbol(TypeBox.Optional): "Optional",
             },
             "path": {
               "$ref": "#/definitions/recordGenerator",
+              Symbol(TypeBox.Kind): "Ref",
+              Symbol(TypeBox.Optional): "Optional",
             },
             "query": {
               "$ref": "#/definitions/generator",
+              Symbol(TypeBox.Kind): "Ref",
+              Symbol(TypeBox.Optional): "Optional",
             },
           },
           "type": "object",
+          Symbol(TypeBox.Kind): "Object",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "headers": {
           "$ref": "#/definitions/headers",
+          Symbol(TypeBox.Kind): "Ref",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "matchingRules": {
           "$ref": "#/definitions/matchingRules",
+          Symbol(TypeBox.Kind): "Ref",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "method": {
           "enum": [
@@ -2692,9 +3394,11 @@ exports[`Pact > v4 > can be serialised 1`] = `
             "TRACE",
           ],
           "type": "string",
+          Symbol(TypeBox.Kind): "Unsafe",
         },
         "path": {
           "type": "string",
+          Symbol(TypeBox.Kind): "String",
         },
         "query": {
           "anyOf": [
@@ -2702,22 +3406,29 @@ exports[`Pact > v4 > can be serialised 1`] = `
               "patternProperties": {
                 "^(.*)$": {
                   "type": "string",
+                  Symbol(TypeBox.Kind): "String",
                 },
               },
               "type": "object",
+              Symbol(TypeBox.Kind): "Record",
             },
             {
               "patternProperties": {
                 "^(.*)$": {
                   "items": {
                     "type": "string",
+                    Symbol(TypeBox.Kind): "String",
                   },
                   "type": "array",
+                  Symbol(TypeBox.Kind): "Array",
                 },
               },
               "type": "object",
+              Symbol(TypeBox.Kind): "Record",
             },
           ],
+          Symbol(TypeBox.Kind): "Union",
+          Symbol(TypeBox.Optional): "Optional",
         },
       },
       "required": [
@@ -2725,6 +3436,7 @@ exports[`Pact > v4 > can be serialised 1`] = `
         "path",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
     "response": {
       "$id": "#/definitions/response",
@@ -2732,52 +3444,73 @@ exports[`Pact > v4 > can be serialised 1`] = `
       "properties": {
         "body": {
           "$ref": "#/definitions/body",
+          Symbol(TypeBox.Kind): "Ref",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "generators": {
           "properties": {
             "body": {
               "$ref": "#/definitions/bodyGenerator",
+              Symbol(TypeBox.Kind): "Ref",
+              Symbol(TypeBox.Optional): "Optional",
             },
             "headers": {
               "$ref": "#/definitions/recordGenerator",
+              Symbol(TypeBox.Kind): "Ref",
+              Symbol(TypeBox.Optional): "Optional",
             },
             "status": {
               "$ref": "#/definitions/generator",
+              Symbol(TypeBox.Kind): "Ref",
+              Symbol(TypeBox.Optional): "Optional",
             },
           },
           "type": "object",
+          Symbol(TypeBox.Kind): "Object",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "headers": {
           "$ref": "#/definitions/headers",
+          Symbol(TypeBox.Kind): "Ref",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "matchingRules": {
           "$ref": "#/definitions/matchingRules",
+          Symbol(TypeBox.Kind): "Ref",
+          Symbol(TypeBox.Optional): "Optional",
         },
         "status": {
           "maximum": 599,
           "minimum": 100,
           "type": "integer",
+          Symbol(TypeBox.Kind): "Integer",
         },
       },
       "required": [
         "status",
       ],
       "type": "object",
+      Symbol(TypeBox.Kind): "Object",
     },
   },
   "description": "Schema for a Pact file",
   "properties": {
     "consumer": {
       "$ref": "#/definitions/pacticipant",
+      Symbol(TypeBox.Kind): "Ref",
     },
     "interactions": {
       "$ref": "#/definitions/interactions",
+      Symbol(TypeBox.Kind): "Ref",
     },
     "metadata": {
       "$ref": "#/definitions/metadata",
+      Symbol(TypeBox.Kind): "Ref",
+      Symbol(TypeBox.Optional): "Optional",
     },
     "provider": {
       "$ref": "#/definitions/pacticipant",
+      Symbol(TypeBox.Kind): "Ref",
     },
   },
   "required": [
@@ -2787,5 +3520,6 @@ exports[`Pact > v4 > can be serialised 1`] = `
   ],
   "title": "Pact V4",
   "type": "object",
+  Symbol(TypeBox.Kind): "Object",
 }
 `;
