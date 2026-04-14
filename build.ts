@@ -5,7 +5,11 @@ import {
   PactV4Schema,
 } from "./src/index";
 import { writeFileSync } from "fs";
-import { join } from "path";
+import { join, dirname } from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 writeFileSync(
   join(__dirname, "dist", "pact-schema-v1.json"),

@@ -1,9 +1,4 @@
 {
-  "ts-node": {
-    "compilerOptions": {
-      "module": "CommonJS"
-    }
-  },
   "include": ["src/**/*", "build.ts"],
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,

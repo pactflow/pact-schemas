@@ -1,21 +1,17 @@
 import Ajv, { ValidateFunction } from "ajv";
 import fs from "fs";
-import path from "path";
+import { join, dirname } from "path";
+import { fileURLToPath } from "url";
 import { beforeAll, describe, expect, it } from "vitest";
 import { PactV1Schema, PactV2Schema, PactV3Schema, PactV4Schema } from "./";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const files = (version: string, status: string) =>
-  fs.readdirSync(path.join(__dirname, "..", "examples", version, status));
+  fs.readdirSync(join(__dirname, "..", "examples", version, status));
 
 const pactFile = (version: string, status: string, file: string) => {
-  const filePath = path.join(
-    __dirname,
-    "..",
-    "examples",
-    version,
-    status,
-    file,
-  );
+  const filePath = join(__dirname, "..", "examples", version, status, file);
   return JSON.parse(fs.readFileSync(filePath).toString());
 };
 

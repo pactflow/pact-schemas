@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "ts-node build.ts",
+    "build": "tsx build.ts",
     "lint": "eslint src",
     "prettier": "prettier --check .",
     "prettier:fix": "prettier --cache --write .",
@@ -34,12 +34,13 @@
     "eslint-config-prettier": "^10.0.0",
     "jiti": "^2.0.0",
     "prettier": "^3.0.0",
-    "ts-node": "^10.9.1",
+    "tsx": "^4.21.0",
     "typescript": "^6.0.0",
     "typescript-eslint": "^8.58.1",
     "vitest": "^4.0.0"
   },
   "dependencies": {
     "@sinclair/typebox": "^0.34.0"
-  }
+  },
+  "type": "module"
 }
