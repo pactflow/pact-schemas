@@ -4,9 +4,9 @@ import { matchers } from "./matchers";
 const $id = "#/definitions/bodyMatcher";
 
 export const bodyMatcher = Type.Record(
-  Type.RegEx(/^\$.*$/),
+  Type.String({ pattern: "^\\$.*$" }),
   Type.Ref(matchers),
   {
     $id,
-  }
+  },
 );

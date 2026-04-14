@@ -1,9 +1,11 @@
 {
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "build.ts"],
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "moduleResolution": "node",
+    "module": "esnext",
+    "moduleResolution": "bundler",
     "strict": true,
-    "target": "esnext"
+    "target": "esnext",
+    "types": ["node"]
   }
 }

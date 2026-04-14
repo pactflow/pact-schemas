@@ -13,8 +13,8 @@ export const messageContents = Type.Object(
         {
           body: Type.Ref(bodyMatcher),
         },
-        { additionalProperties: false }
-      )
+        { additionalProperties: false },
+      ),
     ),
     generators: Type.Optional(
       Type.Object(
@@ -22,11 +22,11 @@ export const messageContents = Type.Object(
           body: Type.Optional(Type.Ref(bodyGenerator)),
           metadata: Type.Optional(Type.Ref(recordGenerator)),
         },
-        { additionalProperties: false }
-      )
+        { additionalProperties: false },
+      ),
     ),
   },
-  { $id: "#/definitions/messageContents", additionalProperties: false }
+  { $id: "#/definitions/messageContents", additionalProperties: false },
 );
 
 export const message = Type.Composite(
@@ -37,7 +37,7 @@ export const message = Type.Composite(
       providerState: Type.Optional(Type.String()),
     }),
   ],
-  { $id: "#/definitions/message", additionalProperties: false }
+  { $id: "#/definitions/message", additionalProperties: false },
 );
 
 export const messages = Type.Array(Type.Ref(message), {

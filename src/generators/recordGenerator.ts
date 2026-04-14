@@ -14,5 +14,5 @@ export const recordGeneratorV4 = Type.Record(
   {
     $id,
     additionalProperties: false,
-  }
+  },
 );

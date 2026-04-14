@@ -6,5 +6,5 @@ export const pacticipant = Type.Object(
   {
     name: Type.String(),
   },
-  { $id }
+  { $id },
 );

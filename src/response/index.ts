@@ -14,7 +14,7 @@ export const response = Type.Object(
     headers: Type.Optional(Type.Ref(headers)),
     status: Type.Integer({ minimum: 100, maximum: 599 }),
   },
-  { $id, additionalProperties: false }
+  { $id, additionalProperties: false },
 );
 
 export const responseV2 = Type.Composite(
@@ -24,7 +24,7 @@ export const responseV2 = Type.Composite(
       matchingRules: Type.Optional(Type.Ref(matchingRules)),
     }),
   ],
-  { $id, additionalProperties: false }
+  { $id, additionalProperties: false },
 );
 
 export const responseV3 = Type.Composite(
@@ -36,11 +36,11 @@ export const responseV3 = Type.Composite(
           body: Type.Optional(Type.Ref(bodyGenerator)),
           headers: Type.Optional(Type.Ref(recordGenerator)),
           status: Type.Optional(Type.Ref(generator)),
-        })
+        }),
       ),
     }),
   ],
-  { $id, additionalProperties: false }
+  { $id, additionalProperties: false },
 );
 
 export const responseV4 = Type.Composite(
@@ -50,5 +50,5 @@ export const responseV4 = Type.Composite(
       body: Type.Optional(Type.Ref(body)),
     }),
   ],
-  { $id, additionalProperties: false }
+  { $id, additionalProperties: false },
 );

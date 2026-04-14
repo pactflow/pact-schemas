@@ -31,6 +31,11 @@
       "$id": "#/definitions/interaction",
       "additionalProperties": false,
       "type": "object",
+      "required": [
+        "description",
+        "request",
+        "response"
+      ],
       "properties": {
         "description": {
           "type": "string"
@@ -47,12 +52,7 @@
         "response": {
           "$ref": "#/definitions/response"
         }
-      },
-      "required": [
-        "description",
-        "request",
-        "response"
-      ]
+      }
     },
     "interactions": {
       "$id": "#/definitions/interactions",
@@ -68,14 +68,14 @@
         "pactSpecification": {
           "additionalProperties": false,
           "type": "object",
+          "required": [
+            "version"
+          ],
           "properties": {
             "version": {
               "type": "string"
             }
-          },
-          "required": [
-            "version"
-          ]
+          }
         },
         "pactSpecificationVersion": {
           "type": "string"
@@ -83,33 +83,37 @@
         "pact-specification": {
           "additionalProperties": false,
           "type": "object",
+          "required": [
+            "version"
+          ],
           "properties": {
             "version": {
               "type": "string"
             }
-          },
-          "required": [
-            "version"
-          ]
+          }
         }
       }
     },
     "pacticipant": {
       "$id": "#/definitions/pacticipant",
       "type": "object",
+      "required": [
+        "name"
+      ],
       "properties": {
         "name": {
           "type": "string"
         }
-      },
-      "required": [
-        "name"
-      ]
+      }
     },
     "request": {
       "$id": "#/definitions/request",
       "additionalProperties": false,
       "type": "object",
+      "required": [
+        "method",
+        "path"
+      ],
       "properties": {
         "body": {},
         "headers": {
@@ -140,19 +144,18 @@
           "type": "string"
         },
         "query": {
-          "type": "string",
-          "pattern": "^$|^[^=&]+=[^=&]+&?$|^[^=&]+=[^=&]+(&[^=&]+=[^=&]+)*&?$"
+          "pattern": "^$|^[^=&]+=[^=&]+&?$|^[^=&]+=[^=&]+(&[^=&]+=[^=&]+)*&?$",
+          "type": "string"
         }
-      },
-      "required": [
-        "method",
-        "path"
-      ]
+      }
     },
     "response": {
       "$id": "#/definitions/response",
       "additionalProperties": false,
       "type": "object",
+      "required": [
+        "status"
+      ],
       "properties": {
         "body": {},
         "headers": {
@@ -163,13 +166,15 @@
           "maximum": 599,
           "type": "integer"
         }
-      },
-      "required": [
-        "status"
-      ]
+      }
     }
   },
   "type": "object",
+  "required": [
+    "consumer",
+    "interactions",
+    "provider"
+  ],
   "properties": {
     "consumer": {
       "$ref": "#/definitions/pacticipant"
@@ -183,10 +188,5 @@
     "provider": {
       "$ref": "#/definitions/pacticipant"
     }
-  },
-  "required": [
-    "consumer",
-    "interactions",
-    "provider"
-  ]
+  }
 }
