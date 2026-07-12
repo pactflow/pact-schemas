@@ -33,7 +33,7 @@
     "eslint": "10.6.0",
     "eslint-config-prettier": "10.1.8",
     "jiti": "2.7.0",
-    "prettier": "3.9.4",
+    "prettier": "3.9.5",
     "tsx": "4.23.0",
     "typescript": "6.0.3",
     "typescript-eslint": "8.63.0",
