@@ -30,7 +30,7 @@
     "@types/node": "24.13.3",
     "@typescript-eslint/eslint-plugin": "8.67.0",
     "@typescript-eslint/parser": "8.67.0",
-    "eslint": "10.9.0",
+    "eslint": "10.9.1",
     "eslint-config-prettier": "10.1.8",
     "jiti": "2.7.0",
     "prettier": "3.9.6",
