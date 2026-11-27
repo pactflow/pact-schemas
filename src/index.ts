@@ -14,6 +14,7 @@ import {
   genTime,
   genUuid,
   genUuidFormat,
+  genPlugin,
 } from "./generators/rules";
 import { bodyGenerator } from "./generators/bodyGenerator";
 import { recordGenerator } from "./generators/recordGenerator";
@@ -47,8 +48,14 @@ import {
   matchTime,
   matchType,
   matchValues,
+  matchPlugin,
 } from "./matchingRules/rules";
-import { matchers, matchersV4 } from "./matchingRules/matchers";
+import {
+  matcher,
+  matcherV4,
+  matchers,
+  matchersV4,
+} from "./matchingRules/matchers";
 import { recordMatcher } from "./matchingRules/recordMatcher";
 import { bodyMatcher } from "./matchingRules/bodyMatcher";
 import { matchingRules, matchingRulesV3 } from "./matchingRules";
@@ -152,6 +159,7 @@ export const PactV3Schema = Type.Object(
       matchTime,
       matchType,
       matchValues,
+      matcher,
       matchers,
       matchingRules: matchingRulesV3,
       message,
@@ -192,6 +200,7 @@ export const PactV4Schema = Type.Object(
       genTime,
       genUuid,
       genUuidFormat,
+      genPlugin,
       bodyGenerator,
       recordGenerator,
       generator: generatorV4,
@@ -218,6 +227,8 @@ export const PactV4Schema = Type.Object(
       matchTime,
       matchType,
       matchValues,
+      matchPlugin,
+      matcher: matcherV4,
       matchers: matchersV4,
       matchingRules: matchingRulesV3,
       messageContents,

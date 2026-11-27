@@ -1,4 +1,10 @@
 import { Type } from "@sinclair/typebox";
+import { StringEnum } from "../utils";
+
+// eachKey / eachValue / arrayContains nest matchers and generators. Refer to
+// them by $ref so the version-specific definitions are picked up.
+const matcherRef = Type.Unsafe({ $ref: "#/definitions/matcher" });
+const generatorRef = Type.Unsafe({ $ref: "#/definitions/generator" });
 
 // V2 matchers
 
@@ -115,7 +121,19 @@ export const matchValues = Type.Object(
 export const matchArrayContains = Type.Object(
   {
     match: Type.Literal("arrayContains"),
-    variants: Type.Array(Type.Any()),
+    variants: Type.Array(
+      Type.Object(
+        {
+          index: Type.Integer({ minimum: 0 }),
+          rules: Type.Record(
+            Type.String(),
+            Type.Unsafe({ $ref: "#/definitions/matchers" }),
+          ),
+          generators: Type.Optional(Type.Record(Type.String(), generatorRef)),
+        },
+        { additionalProperties: false },
+      ),
+    ),
   },
   { $id: "#/definitions/matchArrayContains", additionalProperties: false },
 );
@@ -123,8 +141,10 @@ export const matchArrayContains = Type.Object(
 export const matchEachKey = Type.Object(
   {
     match: Type.Literal("eachKey"),
-    rules: Type.Array(Type.Unknown()), // FIXME
-    value: Type.String({ pattern: "^\\$.*$" }),
+    rules: Type.Array(matcherRef),
+    // JSON-encoded example value, omitted when empty
+    value: Type.Optional(Type.String()),
+    generator: Type.Optional(generatorRef),
   },
   { $id: "#/definitions/matchEachKey", additionalProperties: false },
 );
@@ -132,8 +152,10 @@ export const matchEachKey = Type.Object(
 export const matchEachValue = Type.Object(
   {
     match: Type.Literal("eachValue"),
-    rules: Type.Array(Type.Unknown()), // FIXME
-    value: Type.String({ pattern: "^\\$.*$" }),
+    rules: Type.Array(matcherRef),
+    // JSON-encoded example value, omitted when empty
+    value: Type.Optional(Type.String()),
+    generator: Type.Optional(generatorRef),
   },
   { $id: "#/definitions/matchEachValue", additionalProperties: false },
 );
@@ -155,7 +177,18 @@ export const matchSemver = Type.Object(
 export const matchStatusCode = Type.Object(
   {
     match: Type.Literal("statusCode"),
-    status: Type.String(),
+    status: Type.Union([
+      StringEnum([
+        "info",
+        "success",
+        "redirect",
+        "clientError",
+        "serverError",
+        "nonError",
+        "error",
+      ]),
+      Type.Array(Type.Integer({ minimum: 100, maximum: 599 })),
+    ]),
   },
   { $id: "#/definitions/matchStatusCode", additionalProperties: false },
 );
@@ -183,3 +216,43 @@ export const matchV4 = [
   Type.Ref(matchSemver),
   Type.Ref(matchStatusCode),
 ];
+
+// Every match type pact_models knows about. Used to keep the plugin escape
+// hatch from swallowing a malformed built-in matcher.
+export const knownMatchTypes = [
+  "regex",
+  "type",
+  "min",
+  "max",
+  "minmax",
+  "boolean",
+  "contentType",
+  "date",
+  "datetime",
+  "timestamp",
+  "decimal",
+  "real",
+  "equality",
+  "include",
+  "integer",
+  "null",
+  "number",
+  "time",
+  "values",
+  "arrayContains",
+  "eachKey",
+  "eachValue",
+  "notEmpty",
+  "semver",
+  "statusCode",
+];
+
+// V4 only: matchers provided by plugins serialise as {match: <name>, ...config}
+export const matchPlugin = Type.Object(
+  {
+    match: Type.String({ not: { enum: knownMatchTypes } }),
+  },
+  { $id: "#/definitions/matchPlugin", additionalProperties: true },
+);
+
+export const matchV4Plugin = [Type.Ref(matchPlugin)];

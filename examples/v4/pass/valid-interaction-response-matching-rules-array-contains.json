@@ -1,0 +1,80 @@
+{
+  "consumer": {
+    "name": "A consumer"
+  },
+  "interactions": [
+    {
+      "type": "Synchronous/HTTP",
+      "description": "A description",
+      "request": {
+        "method": "get",
+        "path": "/path"
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "content": {
+            "a": 1
+          },
+          "contentType": "application/json",
+          "encoded": false
+        },
+        "matchingRules": {
+          "body": {
+            "$.a": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "arrayContains",
+                  "variants": [
+                    {
+                      "index": 0,
+                      "rules": {
+                        "$.id": {
+                          "combine": "AND",
+                          "matchers": [
+                            {
+                              "match": "integer"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "index": 1,
+                      "rules": {
+                        "$.n": {
+                          "combine": "AND",
+                          "matchers": [
+                            {
+                              "match": "integer"
+                            }
+                          ]
+                        }
+                      },
+                      "generators": {
+                        "$.n": {
+                          "type": "RandomInt",
+                          "min": 0,
+                          "max": 10
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "provider": {
+    "name": "A provider"
+  },
+  "metadata": {
+    "pactSpecification": {
+      "version": "4.0"
+    }
+  }
+}

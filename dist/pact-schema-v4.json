@@ -10,7 +10,6 @@
       "required": [
         "content",
         "contentType",
-        "contentTypeHint",
         "encoded"
       ],
       "properties": {
@@ -63,6 +62,9 @@
         },
         "format": {
           "type": "string"
+        },
+        "expression": {
+          "type": "string"
         }
       }
     },
@@ -79,6 +81,9 @@
           "type": "string"
         },
         "format": {
+          "type": "string"
+        },
+        "expression": {
           "type": "string"
         }
       }
@@ -120,6 +125,17 @@
         },
         "expression": {
           "type": "string"
+        },
+        "dataType": {
+          "type": "string",
+          "enum": [
+            "STRING",
+            "INTEGER",
+            "DECIMAL",
+            "FLOAT",
+            "RAW",
+            "BOOLEAN"
+          ]
         }
       }
     },
@@ -245,6 +261,9 @@
         },
         "format": {
           "type": "string"
+        },
+        "expression": {
+          "type": "string"
         }
       }
     },
@@ -294,6 +313,35 @@
               "type": "string"
             }
           ]
+        }
+      }
+    },
+    "genPlugin": {
+      "$id": "#/definitions/genPlugin",
+      "additionalProperties": true,
+      "type": "object",
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "not": {
+            "enum": [
+              "Date",
+              "DateTime",
+              "MockServerURL",
+              "ProviderState",
+              "RandomBoolean",
+              "RandomDecimal",
+              "RandomHexadecimal",
+              "RandomInt",
+              "RandomString",
+              "Regex",
+              "Time",
+              "Uuid"
+            ]
+          },
+          "type": "string"
         }
       }
     },
@@ -357,6 +405,9 @@
         },
         {
           "$ref": "#/definitions/genUuidFormat"
+        },
+        {
+          "$ref": "#/definitions/genPlugin"
         }
       ],
       "$id": "#/definitions/generator"
@@ -769,7 +820,36 @@
         },
         "variants": {
           "type": "array",
-          "items": {}
+          "items": {
+            "additionalProperties": false,
+            "type": "object",
+            "required": [
+              "index",
+              "rules"
+            ],
+            "properties": {
+              "index": {
+                "minimum": 0,
+                "type": "integer"
+              },
+              "rules": {
+                "type": "object",
+                "patternProperties": {
+                  "^(.*)$": {
+                    "$ref": "#/definitions/matchers"
+                  }
+                }
+              },
+              "generators": {
+                "type": "object",
+                "patternProperties": {
+                  "^(.*)$": {
+                    "$ref": "#/definitions/generator"
+                  }
+                }
+              }
+            }
+          }
         }
       }
     },
@@ -861,8 +941,7 @@
       "type": "object",
       "required": [
         "match",
-        "rules",
-        "value"
+        "rules"
       ],
       "properties": {
         "match": {
@@ -871,11 +950,15 @@
         },
         "rules": {
           "type": "array",
-          "items": {}
+          "items": {
+            "$ref": "#/definitions/matcher"
+          }
         },
         "value": {
-          "pattern": "^\\$.*$",
           "type": "string"
+        },
+        "generator": {
+          "$ref": "#/definitions/generator"
         }
       }
     },
@@ -885,8 +968,7 @@
       "type": "object",
       "required": [
         "match",
-        "rules",
-        "value"
+        "rules"
       ],
       "properties": {
         "match": {
@@ -895,11 +977,15 @@
         },
         "rules": {
           "type": "array",
-          "items": {}
+          "items": {
+            "$ref": "#/definitions/matcher"
+          }
         },
         "value": {
-          "pattern": "^\\$.*$",
           "type": "string"
+        },
+        "generator": {
+          "$ref": "#/definitions/generator"
         }
       }
     },
@@ -1037,7 +1123,28 @@
           "type": "string"
         },
         "status": {
-          "type": "string"
+          "anyOf": [
+            {
+              "type": "string",
+              "enum": [
+                "info",
+                "success",
+                "redirect",
+                "clientError",
+                "serverError",
+                "nonError",
+                "error"
+              ]
+            },
+            {
+              "type": "array",
+              "items": {
+                "minimum": 100,
+                "maximum": 599,
+                "type": "integer"
+              }
+            }
+          ]
         }
       }
     },
@@ -1093,6 +1200,116 @@
         }
       }
     },
+    "matchPlugin": {
+      "$id": "#/definitions/matchPlugin",
+      "additionalProperties": true,
+      "type": "object",
+      "required": [
+        "match"
+      ],
+      "properties": {
+        "match": {
+          "not": {
+            "enum": [
+              "regex",
+              "type",
+              "min",
+              "max",
+              "minmax",
+              "boolean",
+              "contentType",
+              "date",
+              "datetime",
+              "timestamp",
+              "decimal",
+              "real",
+              "equality",
+              "include",
+              "integer",
+              "null",
+              "number",
+              "time",
+              "values",
+              "arrayContains",
+              "eachKey",
+              "eachValue",
+              "notEmpty",
+              "semver",
+              "statusCode"
+            ]
+          },
+          "type": "string"
+        }
+      }
+    },
+    "matcher": {
+      "$id": "#/definitions/matcher",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/matchRegex"
+        },
+        {
+          "$ref": "#/definitions/matchType"
+        },
+        {
+          "$ref": "#/definitions/matchBoolean"
+        },
+        {
+          "$ref": "#/definitions/matchContentType"
+        },
+        {
+          "$ref": "#/definitions/matchDate"
+        },
+        {
+          "$ref": "#/definitions/matchDatetime"
+        },
+        {
+          "$ref": "#/definitions/matchDecimal"
+        },
+        {
+          "$ref": "#/definitions/matchEquality"
+        },
+        {
+          "$ref": "#/definitions/matchInclude"
+        },
+        {
+          "$ref": "#/definitions/matchInteger"
+        },
+        {
+          "$ref": "#/definitions/matchNull"
+        },
+        {
+          "$ref": "#/definitions/matchNumber"
+        },
+        {
+          "$ref": "#/definitions/matchTime"
+        },
+        {
+          "$ref": "#/definitions/matchValues"
+        },
+        {
+          "$ref": "#/definitions/matchArrayContains"
+        },
+        {
+          "$ref": "#/definitions/matchEachKey"
+        },
+        {
+          "$ref": "#/definitions/matchEachValue"
+        },
+        {
+          "$ref": "#/definitions/matchNotEmpty"
+        },
+        {
+          "$ref": "#/definitions/matchSemver"
+        },
+        {
+          "$ref": "#/definitions/matchStatusCode"
+        },
+        {
+          "$ref": "#/definitions/matchPlugin"
+        }
+      ]
+    },
     "matchers": {
       "$id": "#/definitions/matchers",
       "additionalProperties": false,
@@ -1116,68 +1333,7 @@
         "matchers": {
           "type": "array",
           "items": {
-            "anyOf": [
-              {
-                "$ref": "#/definitions/matchRegex"
-              },
-              {
-                "$ref": "#/definitions/matchType"
-              },
-              {
-                "$ref": "#/definitions/matchBoolean"
-              },
-              {
-                "$ref": "#/definitions/matchContentType"
-              },
-              {
-                "$ref": "#/definitions/matchDate"
-              },
-              {
-                "$ref": "#/definitions/matchDatetime"
-              },
-              {
-                "$ref": "#/definitions/matchDecimal"
-              },
-              {
-                "$ref": "#/definitions/matchEquality"
-              },
-              {
-                "$ref": "#/definitions/matchInclude"
-              },
-              {
-                "$ref": "#/definitions/matchInteger"
-              },
-              {
-                "$ref": "#/definitions/matchNull"
-              },
-              {
-                "$ref": "#/definitions/matchNumber"
-              },
-              {
-                "$ref": "#/definitions/matchTime"
-              },
-              {
-                "$ref": "#/definitions/matchValues"
-              },
-              {
-                "$ref": "#/definitions/matchArrayContains"
-              },
-              {
-                "$ref": "#/definitions/matchEachKey"
-              },
-              {
-                "$ref": "#/definitions/matchEachValue"
-              },
-              {
-                "$ref": "#/definitions/matchNotEmpty"
-              },
-              {
-                "$ref": "#/definitions/matchSemver"
-              },
-              {
-                "$ref": "#/definitions/matchStatusCode"
-              }
-            ]
+            "$ref": "#/definitions/matcher"
           }
         }
       }
