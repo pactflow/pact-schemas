@@ -1,0 +1,41 @@
+{
+  "consumer": {
+    "name": "A consumer"
+  },
+  "interactions": [
+    {
+      "type": "Synchronous/HTTP",
+      "description": "A description",
+      "request": {
+        "method": "get",
+        "path": "/path"
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "content": {
+            "a": 1
+          },
+          "contentType": "application/json",
+          "encoded": false
+        },
+        "generators": {
+          "body": {
+            "$.a": {
+              "type": "DateTime",
+              "expression": "tomorrow"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "provider": {
+    "name": "A provider"
+  },
+  "metadata": {
+    "pactSpecification": {
+      "version": "4.0"
+    }
+  }
+}

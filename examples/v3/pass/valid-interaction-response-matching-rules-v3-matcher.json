@@ -1,0 +1,39 @@
+{
+  "consumer": {
+    "name": "A consumer"
+  },
+  "interactions": [
+    {
+      "description": "A description",
+      "request": {
+        "method": "get",
+        "path": "/a/path"
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "a": 1
+        },
+        "matchingRules": {
+          "body": {
+            "$.a": {
+              "matchers": [
+                {
+                  "match": "integer"
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "provider": {
+    "name": "A provider"
+  },
+  "metadata": {
+    "pactSpecification": {
+      "version": "3.0.0"
+    }
+  }
+}

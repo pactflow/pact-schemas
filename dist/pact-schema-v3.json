@@ -17,6 +17,9 @@
         },
         "format": {
           "type": "string"
+        },
+        "expression": {
+          "type": "string"
         }
       }
     },
@@ -33,6 +36,9 @@
           "type": "string"
         },
         "format": {
+          "type": "string"
+        },
+        "expression": {
           "type": "string"
         }
       }
@@ -158,6 +164,9 @@
           "type": "string"
         },
         "format": {
+          "type": "string"
+        },
+        "expression": {
           "type": "string"
         }
       }
@@ -536,6 +545,53 @@
         }
       }
     },
+    "matcher": {
+      "$id": "#/definitions/matcher",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/matchRegex"
+        },
+        {
+          "$ref": "#/definitions/matchType"
+        },
+        {
+          "$ref": "#/definitions/matchBoolean"
+        },
+        {
+          "$ref": "#/definitions/matchContentType"
+        },
+        {
+          "$ref": "#/definitions/matchDate"
+        },
+        {
+          "$ref": "#/definitions/matchDatetime"
+        },
+        {
+          "$ref": "#/definitions/matchDecimal"
+        },
+        {
+          "$ref": "#/definitions/matchEquality"
+        },
+        {
+          "$ref": "#/definitions/matchInclude"
+        },
+        {
+          "$ref": "#/definitions/matchInteger"
+        },
+        {
+          "$ref": "#/definitions/matchNull"
+        },
+        {
+          "$ref": "#/definitions/matchNumber"
+        },
+        {
+          "$ref": "#/definitions/matchTime"
+        },
+        {
+          "$ref": "#/definitions/matchValues"
+        }
+      ]
+    },
     "matchers": {
       "$id": "#/definitions/matchers",
       "additionalProperties": false,
@@ -559,50 +615,7 @@
         "matchers": {
           "type": "array",
           "items": {
-            "anyOf": [
-              {
-                "$ref": "#/definitions/matchRegex"
-              },
-              {
-                "$ref": "#/definitions/matchType"
-              },
-              {
-                "$ref": "#/definitions/matchBoolean"
-              },
-              {
-                "$ref": "#/definitions/matchContentType"
-              },
-              {
-                "$ref": "#/definitions/matchDate"
-              },
-              {
-                "$ref": "#/definitions/matchDatetime"
-              },
-              {
-                "$ref": "#/definitions/matchDecimal"
-              },
-              {
-                "$ref": "#/definitions/matchEquality"
-              },
-              {
-                "$ref": "#/definitions/matchInclude"
-              },
-              {
-                "$ref": "#/definitions/matchInteger"
-              },
-              {
-                "$ref": "#/definitions/matchNull"
-              },
-              {
-                "$ref": "#/definitions/matchNumber"
-              },
-              {
-                "$ref": "#/definitions/matchTime"
-              },
-              {
-                "$ref": "#/definitions/matchValues"
-              }
-            ]
+            "$ref": "#/definitions/matcher"
           }
         }
       }

@@ -1,4 +1,5 @@
 import { Type } from "@sinclair/typebox";
+import { StringEnum } from "../utils";
 
 // V3 generators
 
@@ -6,6 +7,7 @@ export const genDate = Type.Object(
   {
     type: Type.Literal("Date"),
     format: Type.Optional(Type.String()),
+    expression: Type.Optional(Type.String()),
   },
   { $id: "#/definitions/genDate", additionalProperties: false },
 );
@@ -14,6 +16,7 @@ export const genDateTime = Type.Object(
   {
     type: Type.Literal("DateTime"),
     format: Type.Optional(Type.String()),
+    expression: Type.Optional(Type.String()),
   },
   { $id: "#/definitions/genDateTime", additionalProperties: false },
 );
@@ -70,6 +73,7 @@ export const genTime = Type.Object(
   {
     type: Type.Literal("Time"),
     format: Type.Optional(Type.String()),
+    expression: Type.Optional(Type.String()),
   },
   { $id: "#/definitions/genTime", additionalProperties: false },
 );
@@ -96,6 +100,9 @@ export const genProviderState = Type.Object(
   {
     type: Type.Literal("ProviderState"),
     expression: Type.String(),
+    dataType: Type.Optional(
+      StringEnum(["STRING", "INTEGER", "DECIMAL", "FLOAT", "RAW", "BOOLEAN"]),
+    ),
   },
   { $id: "#/definitions/genProviderState", additionalProperties: false },
 );
@@ -111,6 +118,31 @@ export const genUuidFormat = Type.Object(
     ]),
   },
   { $id: "#/definitions/genUuidFormat", additionalProperties: false },
+);
+
+// Every generator type pact_models knows about, so the plugin escape hatch
+// doesn't swallow a malformed built-in generator.
+export const knownGeneratorTypes = [
+  "Date",
+  "DateTime",
+  "MockServerURL",
+  "ProviderState",
+  "RandomBoolean",
+  "RandomDecimal",
+  "RandomHexadecimal",
+  "RandomInt",
+  "RandomString",
+  "Regex",
+  "Time",
+  "Uuid",
+];
+
+// V4 only: generators provided by plugins serialise as {type: <name>, ...config}
+export const genPlugin = Type.Object(
+  {
+    type: Type.String({ not: { enum: knownGeneratorTypes } }),
+  },
+  { $id: "#/definitions/genPlugin", additionalProperties: true },
 );
 
 export const genV3 = [
@@ -129,4 +161,5 @@ export const genV4 = [
   Type.Ref(genMockServerURL),
   Type.Ref(genProviderState),
   Type.Ref(genUuidFormat),
+  Type.Ref(genPlugin),
 ];
